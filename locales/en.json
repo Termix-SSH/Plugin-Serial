@@ -24,6 +24,8 @@
     "notSupportedTitle": "Serial Not Supported",
     "notSupported": "Serial connections require a browser with Web Serial API support (Chrome, Edge, or Firefox 151+), or the Termix desktop app.",
     "hideHint": "You can hide the Serial tab under User Profile > Appearance > Sidebar > Navigation.",
-    "browserPickerHint": "Click Connect and your browser will open a port picker to choose the device."
+    "browserPickerHint": "Click Connect and your browser will open a port picker to choose the device.",
+    "opening": "Opening {{path}}",
+    "baudDetail": "{{baud}} baud"
   }
 }

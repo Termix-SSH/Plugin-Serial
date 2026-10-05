@@ -4,10 +4,11 @@ import {
   useCallback,
   forwardRef,
   useImperativeHandle,
+  useState,
 } from "react";
 import { useXTerm } from "react-xtermjs";
 import { FitAddon } from "@xterm/addon-fit";
-import { TriangleAlert } from "lucide-react";
+import { ConnectionScreen, type ConnectionStatus } from "@termix/plugin-sdk/ui";
 import {
   invokeAction,
   useTranslation,
@@ -58,6 +59,12 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
   const { instance: terminal, ref: xtermRef } = useXTerm();
   const fitAddonRef = useRef<FitAddon | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
+  const [status, setStatus] = useState<ConnectionStatus>("connecting");
+  const [failure, setFailure] = useState<string | null>(null);
+  const fail = useCallback((reason: string) => {
+    setFailure(reason || null);
+    setStatus("error");
+  }, []);
   const connectedRef = useRef(false);
   const webSerialReaderRef = useRef<ReadableStreamDefaultReader | null>(null);
   const webSerialWriterRef = useRef<WritableStreamDefaultWriter | null>(null);
@@ -110,10 +117,12 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     disconnectWs();
     const target = await resolveSerialWsUrl();
     if (!target) {
-      write(`\r\n\x1b[31m${t("serial.errorNoServerUrl")}\x1b[0m\r\n`);
+      fail(t("serial.errorNoServerUrl"));
       return;
     }
 
+    setStatus("connecting");
+    setFailure(null);
     const ws = new WebSocket(target.url, target.protocols);
     wsRef.current = ws;
 
@@ -130,21 +139,17 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
         switch (msg.type) {
           case "connected":
             connectedRef.current = true;
-            write(
-              `\x1b[32m${t("serial.connected", { path: config.path, baud: config.baudRate })}\x1b[0m\r\n`,
-            );
+            setStatus("connected");
             break;
           case "data":
             if (typeof msg.data === "string") write(msg.data);
             break;
           case "disconnected":
             connectedRef.current = false;
-            write(`\r\n\x1b[33m${t("serial.disconnected")}\x1b[0m\r\n`);
+            setStatus("disconnected");
             break;
           case "error":
-            write(
-              `\r\n\x1b[31m${t("serial.connectionError")}: ${msg.data as string}\x1b[0m\r\n`,
-            );
+            fail(String(msg.data ?? ""));
             break;
         }
       } catch {
@@ -157,9 +162,9 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     };
 
     ws.onerror = () => {
-      write(`\r\n\x1b[31m${t("serial.wsError")}\x1b[0m\r\n`);
+      fail(t("serial.wsError"));
     };
-  }, [config, disconnectWs, t, write]);
+  }, [config, disconnectWs, fail, t, write]);
 
   // ── Web Serial API path ────────────────────────────────────────────────
 
@@ -180,11 +185,10 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
   const connectWebSerial = useCallback(async () => {
     await disconnectWebSerial();
 
-    if (!("serial" in navigator)) {
-      write(`\r\n\x1b[31m${t("serial.notSupported")}\x1b[0m\r\n`);
-      return;
-    }
+    if (!("serial" in navigator)) return;
 
+    setStatus("connecting");
+    setFailure(null);
     try {
       const serial = navigator.serial as {
         requestPort(): Promise<WebSerialPort>;
@@ -199,9 +203,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
 
       webSerialPortRef.current = port;
       connectedRef.current = true;
-      write(
-        `\x1b[32m${t("serial.connected", { path: config.path || "serial", baud: config.baudRate })}\x1b[0m\r\n`,
-      );
+      setStatus("connected");
 
       const reader = port.readable!.getReader();
       webSerialReaderRef.current = reader;
@@ -219,20 +221,21 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
         } finally {
           reader.releaseLock();
           connectedRef.current = false;
-          write(`\r\n\x1b[33m${t("serial.disconnected")}\x1b[0m\r\n`);
+          setStatus("disconnected");
         }
       })();
 
       const writer = port.writable!.getWriter();
       webSerialWriterRef.current = writer;
     } catch (err) {
+      // No port picked counts as a plain disconnect, not a failure.
       if (err instanceof Error && err.name !== "NotFoundError") {
-        write(
-          `\r\n\x1b[31m${t("serial.connectionError")}: ${err.message}\x1b[0m\r\n`,
-        );
+        fail(err.message);
+      } else {
+        setStatus("disconnected");
       }
     }
-  }, [config, disconnectWebSerial, t, write]);
+  }, [config, disconnectWebSerial, fail, write]);
 
   // ── Unified connect/disconnect ─────────────────────────────────────────
 
@@ -334,25 +337,32 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
 
   if (useWebSerial && !("serial" in navigator)) {
     return (
-      <div className="flex flex-col items-center justify-center flex-1 gap-3 p-6 text-center">
-        <div className="size-10 rounded-full bg-muted/40 flex items-center justify-center">
-          <TriangleAlert className="size-5 text-muted-foreground/50" />
-        </div>
-        <div className="flex flex-col gap-1">
-          <span className="text-sm font-semibold text-foreground">
-            {t("serial.notSupportedTitle")}
-          </span>
-          <span className="text-xs text-muted-foreground max-w-xs">
-            {t("serial.notSupported")}
-          </span>
-        </div>
+      <div className="relative flex h-full w-full">
+        <ConnectionScreen
+          status="error"
+          unavailable={{
+            title: t("serial.notSupportedTitle"),
+            hint: t("serial.notSupported"),
+          }}
+        />
       </div>
     );
   }
 
   return (
-    <div ref={containerRef} className="flex h-full w-full">
+    <div ref={containerRef} className="relative flex h-full w-full">
       <div ref={xtermRef} className="flex-1 min-h-0" />
+      <ConnectionScreen
+        status={status}
+        message={t("serial.opening", {
+          path: config.path || t("serial.title"),
+        })}
+        detail={t("serial.baudDetail", { baud: config.baudRate })}
+        errorMessage={t("serial.connectionError")}
+        errorDetail={failure}
+        disconnectedMessage={t("serial.disconnected")}
+        onManualRetry={reconnect}
+      />
     </div>
   );
 });
