@@ -7,7 +7,7 @@
     "name": "Termix"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/Termix-SSH/Termix",
+  "repository": "https://github.com/Termix-SSH/Plugin-Serial",
   "category": "Terminal",
   "icon": "Usb",
   "engine": {
