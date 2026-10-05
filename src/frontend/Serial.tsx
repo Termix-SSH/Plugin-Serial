@@ -8,12 +8,12 @@ import {
 } from "react";
 import { useXTerm } from "react-xtermjs";
 import { FitAddon } from "@xterm/addon-fit";
-import { ConnectionScreen, type ConnectionStatus } from "@termix/plugin-sdk/ui";
+import { ConnectionScreen, type ConnectionStatus } from "@termix-ssh/plugin-sdk/ui";
 import {
   invokeAction,
   useTranslation,
   useTheme,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import type { SerialConfig, SerialHandle } from "./types.js";
 import { isElectron } from "./electron.js";
 import { resolveSerialWsUrl } from "./transport.js";

@@ -1,4 +1,4 @@
-import type { TermixApp } from "@termix/plugin-sdk/frontend";
+import type { TermixApp } from "@termix-ssh/plugin-sdk/frontend";
 
 /**
  * The live app.wsUrl, for components that are defined at module scope rather

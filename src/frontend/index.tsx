@@ -7,7 +7,7 @@ import type {
   PluginHostRecord,
   TabProps,
   TermixApp,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import { Serial } from "./Serial.js";
 import { SerialPanel } from "./SerialPanel.js";
 import { setSerialWsUrl } from "./transport.js";

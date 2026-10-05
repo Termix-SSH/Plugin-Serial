@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { RefreshCw, Usb, TriangleAlert } from "lucide-react";
-import { Input, Select2 } from "@termix/plugin-sdk/ui";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { Input, Select2 } from "@termix-ssh/plugin-sdk/ui";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { SerialConfig } from "./types.js";
 import { isElectron } from "./electron.js";
 import { resolveSerialWsUrl } from "./transport.js";

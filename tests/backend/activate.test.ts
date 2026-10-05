@@ -2,9 +2,9 @@ import { describe, it, expect } from "vitest";
 import {
   createMockCtx,
   type MockPluginContext,
-} from "@termix/plugin-sdk/testing";
-import { PluginCapabilityError } from "@termix/plugin-sdk/backend";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
+} from "@termix-ssh/plugin-sdk/testing";
+import { PluginCapabilityError } from "@termix-ssh/plugin-sdk/backend";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 import { activate } from "../../src/backend/index.js";
 

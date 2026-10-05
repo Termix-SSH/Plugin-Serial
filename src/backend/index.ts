@@ -1,4 +1,4 @@
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { createSerialSession } from "./session.js";
 
 export async function activate(ctx: PluginContext): Promise<void> {

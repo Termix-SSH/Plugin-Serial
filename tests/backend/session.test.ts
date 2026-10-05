@@ -3,8 +3,8 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
   createMockCtx,
   type MockPluginContext,
-} from "@termix/plugin-sdk/testing";
-import type { PluginWebSocketConnection } from "@termix/plugin-sdk/backend";
+} from "@termix-ssh/plugin-sdk/testing";
+import type { PluginWebSocketConnection } from "@termix-ssh/plugin-sdk/backend";
 import { createSerialSession } from "../../src/backend/session.js";
 
 // vi.mock's factory is hoisted above every import, including node:events, so

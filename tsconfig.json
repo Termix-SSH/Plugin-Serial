@@ -1,4 +1,4 @@
 {
-  "extends": "@termix/plugin-sdk/tsconfig.plugin.json",
+  "extends": "@termix-ssh/plugin-sdk/tsconfig.plugin.json",
   "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "tests/**/*.tsx"]
 }

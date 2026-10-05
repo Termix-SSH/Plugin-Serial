@@ -3,7 +3,7 @@ import { SerialPort } from "serialport";
 import type {
   PluginContext,
   PluginWebSocketConnection,
-} from "@termix/plugin-sdk/backend";
+} from "@termix-ssh/plugin-sdk/backend";
 import { parseWsMessage } from "./ws-message.js";
 
 interface SerialConnectData {
