@@ -1,0 +1,17 @@
+name: Release
+
+# Push a tag like v1.0.0 to release that version. Run this by hand to
+# release the manifest version again from the current commit, replacing it.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: Termix-SSH/Termix-Registry/.github/workflows/plugin-release.yml@main
+    secrets: inherit
