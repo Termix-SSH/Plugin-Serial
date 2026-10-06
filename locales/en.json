@@ -18,7 +18,6 @@
     "refreshPorts": "Refresh ports",
     "connected": "Connected to {{path}} at {{baud}} baud",
     "disconnected": "Serial port disconnected",
-    "connectionError": "Failed to open serial port",
     "wsError": "WebSocket error",
     "errorNoServerUrl": "No server URL configured",
     "notSupportedTitle": "Serial Not Supported",

@@ -8,7 +8,10 @@ import {
 } from "react";
 import { useXTerm } from "react-xtermjs";
 import { FitAddon } from "@xterm/addon-fit";
-import { ConnectionScreen, type ConnectionStatus } from "@termix-ssh/plugin-sdk/ui";
+import {
+  ConnectionScreen,
+  type ConnectionStatus,
+} from "@termix-ssh/plugin-sdk/ui";
 import {
   invokeAction,
   useTranslation,
@@ -358,7 +361,6 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
           path: config.path || t("serial.title"),
         })}
         detail={t("serial.baudDetail", { baud: config.baudRate })}
-        errorMessage={t("serial.connectionError")}
         errorDetail={failure}
         disconnectedMessage={t("serial.disconnected")}
         onManualRetry={reconnect}
