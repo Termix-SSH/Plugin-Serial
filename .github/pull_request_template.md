@@ -28,7 +28,7 @@ _(Optional: add before/after screenshots, GIFs, or console output)_
 
 - [ ] Code follows project style guidelines
 - [ ] Supports mobile and desktop UI/app (if applicable)
-- [ ] Added the change to `CHANGELOG.json`
+- [ ] Added the change to `CHANGELOG.md`
 - [ ] `npm run test`, `npm run typecheck` and `npm run validate` pass
 - [ ] I have read `CONTRIBUTING.md`
 - [ ] This is not a translation request. See [docs](https://docs.termix.site/translations)
