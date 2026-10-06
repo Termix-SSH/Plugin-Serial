@@ -123,7 +123,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
             <Select2
               value={baudRate}
               onChange={(e) => setBaudRate(Number(e.target.value))}
-              className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+              className="h-8 text-xs"
             >
               {BAUD_RATES.map((r) => (
                 <option key={r} value={r}>
@@ -143,7 +143,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
                 onChange={(e) =>
                   setDataBits(Number(e.target.value) as 5 | 6 | 7 | 8)
                 }
-                className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+                className="h-8 text-xs"
               >
                 {([5, 6, 7, 8] as const).map((b) => (
                   <option key={b} value={b}>
@@ -160,7 +160,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
               <Select2
                 value={stopBits}
                 onChange={(e) => setStopBits(Number(e.target.value) as 1 | 2)}
-                className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+                className="h-8 text-xs"
               >
                 <option value={1}>1</option>
                 <option value={2}>2</option>
@@ -176,7 +176,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
                 onChange={(e) =>
                   setParity(e.target.value as "none" | "even" | "odd")
                 }
-                className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+                className="h-8 text-xs"
               >
                 <option value="none">{t("serial.parityNone")}</option>
                 <option value="even">{t("serial.parityEven")}</option>
@@ -187,7 +187,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
 
           <button
             onClick={connect}
-            className="flex items-center justify-center gap-1.5 h-7 w-full border border-accent-brand/40 bg-accent-brand/10 text-accent-brand text-xs font-semibold hover:bg-accent-brand/20 transition-colors mt-1"
+            className="mt-1 flex h-8 w-full items-center justify-center gap-1.5 border border-accent-brand/40 text-xs font-medium text-accent-brand transition-colors hover:bg-accent-brand/10"
           >
             <Usb className="size-3.5" />
             {t("serial.connect")}
@@ -221,7 +221,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
             <Select2
               value={path}
               onChange={(e) => setPath(e.target.value)}
-              className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+              className="h-8 text-xs"
             >
               <option value="">{t("serial.portPlaceholder")}</option>
               {availablePorts.map((p) => (
@@ -238,7 +238,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
             onKeyDown={(e) => {
               if (e.key === "Enter") connect();
             }}
-            className="h-7 text-xs font-mono"
+            className="h-8 text-xs font-mono"
           />
         </div>
 
@@ -249,7 +249,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
           <Select2
             value={baudRate}
             onChange={(e) => setBaudRate(Number(e.target.value))}
-            className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+            className="h-8 text-xs"
           >
             {BAUD_RATES.map((r) => (
               <option key={r} value={r}>
@@ -269,7 +269,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
               onChange={(e) =>
                 setDataBits(Number(e.target.value) as 5 | 6 | 7 | 8)
               }
-              className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+              className="h-8 text-xs"
             >
               {([5, 6, 7, 8] as const).map((b) => (
                 <option key={b} value={b}>
@@ -286,7 +286,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
             <Select2
               value={stopBits}
               onChange={(e) => setStopBits(Number(e.target.value) as 1 | 2)}
-              className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+              className="h-8 text-xs"
             >
               <option value={1}>1</option>
               <option value={2}>2</option>
@@ -302,7 +302,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
               onChange={(e) =>
                 setParity(e.target.value as "none" | "even" | "odd")
               }
-              className="flex h-7 w-full border border-border bg-background px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-ring"
+              className="h-8 text-xs"
             >
               <option value="none">{t("serial.parityNone")}</option>
               <option value="even">{t("serial.parityEven")}</option>
@@ -314,7 +314,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
         <button
           onClick={connect}
           disabled={!path.trim()}
-          className="flex items-center justify-center gap-1.5 h-7 w-full border border-accent-brand/40 bg-accent-brand/10 text-accent-brand text-xs font-semibold hover:bg-accent-brand/20 transition-colors disabled:opacity-40 disabled:cursor-not-allowed mt-1"
+          className="mt-1 flex h-8 w-full items-center justify-center gap-1.5 border border-accent-brand/40 text-xs font-medium text-accent-brand transition-colors hover:bg-accent-brand/10 disabled:cursor-not-allowed disabled:opacity-40"
         >
           <Usb className="size-3.5" />
           {t("serial.connect")}
