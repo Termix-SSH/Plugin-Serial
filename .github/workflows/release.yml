@@ -1,12 +1,29 @@
 name: Release
 
-# Push a tag like v1.0.0 to release that version. Run this by hand to
-# release the manifest version again from the current commit, replacing it.
+# Run by hand from a dev-X.Y.Z branch. stable releases X.Y.Z and merges the
+# branch into main; beta publishes X.Y.Z-beta.N for plugins on the beta
+# channel. overwrite releases the manifest version again from this commit.
 
 on:
-  push:
-    tags: ["v*"]
   workflow_dispatch:
+    inputs:
+      channel:
+        description: "Stable release or beta"
+        required: true
+        default: stable
+        type: choice
+        options:
+          - stable
+          - beta
+      mode:
+        description: "release, overwrite (stable only) or dry-run"
+        required: true
+        default: release
+        type: choice
+        options:
+          - release
+          - overwrite
+          - dry-run
 
 permissions:
   contents: write
@@ -14,4 +31,7 @@ permissions:
 jobs:
   release:
     uses: Termix-SSH/Termix-Registry/.github/workflows/plugin-release.yml@main
+    with:
+      channel: ${{ inputs.channel }}
+      mode: ${{ inputs.mode }}
     secrets: inherit
