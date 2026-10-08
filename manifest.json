@@ -8,6 +8,7 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Termix-SSH/Plugin-Serial",
+  "docs": "https://docs.termix.site/plugins/serial",
   "category": "Terminal",
   "icon": "Usb",
   "features": [
@@ -17,7 +18,7 @@
   ],
   "engine": {
     "termix": ">=26.10.0",
-    "api": "1"
+    "api": "^1.2"
   },
   "capabilities": ["network:serve", "device:serial", "ui:surface"],
   "nativeDependencies": ["serialport"],

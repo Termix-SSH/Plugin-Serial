@@ -14,6 +14,8 @@
 
 Serial opens a console to a device plugged into your computer, like a router, switch or microcontroller.
 
+Read the [docs](https://docs.termix.site/plugins/serial) to set it up and use it.
+
 <br />
 
 ## Features
