@@ -17,7 +17,7 @@ interface SerialPanelProps {
 
 // In Chrome/Edge the Web Serial API shows its own native port picker on requestPort(),
 // so getPorts() only returns previously-granted ports. We never need the user to type
-// a path — the browser handles selection at connect time.
+// a path, the browser handles selection at connect time.
 const useWebSerial = !isElectron() && "serial" in navigator;
 const serialUnsupported = !isElectron() && !("serial" in navigator);
 
@@ -70,7 +70,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
   }, []);
 
   const connect = () => {
-    // For Web Serial, path is irrelevant — the browser picker handles it.
+    // For Web Serial, path is irrelevant, the browser picker handles it.
     // We pass an empty string; Serial.tsx calls requestPort() itself.
     if (useWebSerial) {
       onConnect({ path: "", baudRate, dataBits, stopBits, parity });

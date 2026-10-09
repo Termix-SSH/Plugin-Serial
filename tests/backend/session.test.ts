@@ -9,14 +9,18 @@ import { createSerialSession } from "../../src/backend/session.js";
 
 // vi.mock's factory is hoisted above every import, including node:events, so
 // FakeSerialPort gets its own minimal emitter rather than extending it.
-const { listMock, openMock, FakeSerialPort } = vi.hoisted(() => {
+const { listMock, openMock, ports, FakeSerialPort } = vi.hoisted(() => {
   const listMock = vi.fn(async () => [{ path: "/dev/ttyUSB0" }]);
   const openMock = vi.fn();
+  const ports: FakeSerialPort[] = [];
 
   class FakeSerialPort {
     isOpen = false;
     private listeners = new Map<string, Set<(...args: unknown[]) => void>>();
-    constructor(public options: Record<string, unknown>) {}
+    finishOpen: (() => void) | null = null;
+    constructor(public options: Record<string, unknown>) {
+      ports.push(this);
+    }
     on(event: string, listener: (...args: unknown[]) => void) {
       const set = this.listeners.get(event) ?? new Set();
       set.add(listener);
@@ -27,9 +31,12 @@ const { listMock, openMock, FakeSerialPort } = vi.hoisted(() => {
       for (const listener of this.listeners.get(event) ?? []) listener(...args);
     }
     open(cb: (err?: Error) => void) {
-      openMock(this.options);
-      this.isOpen = true;
-      cb();
+      const finish = () => {
+        this.isOpen = true;
+        cb();
+      };
+      if (openMock(this.options) === "defer") this.finishOpen = finish;
+      else finish();
     }
     write(_data: Buffer, cb: (err?: Error) => void) {
       cb();
@@ -41,7 +48,7 @@ const { listMock, openMock, FakeSerialPort } = vi.hoisted(() => {
     static list = listMock;
   }
 
-  return { listMock, openMock, FakeSerialPort };
+  return { listMock, openMock, ports, FakeSerialPort };
 });
 
 vi.mock("serialport", () => ({ SerialPort: FakeSerialPort }));
@@ -81,7 +88,8 @@ describe("serial session", () => {
 
   beforeEach(() => {
     listMock.mockClear();
-    openMock.mockClear();
+    openMock.mockReset();
+    ports.length = 0;
   });
 
   it("refuses list_ports and connect without device:serial", async () => {
@@ -183,5 +191,45 @@ describe("serial session", () => {
 
     expect(listMock).not.toHaveBeenCalled();
     expect(socket.sent).toEqual([expect.objectContaining({ type: "error" })]);
+  });
+
+  it("closes a port that finishes opening after the socket closed", async () => {
+    mock = createMockCtx({
+      pluginId: "serial",
+      capabilities: ["network:serve", "device:serial"],
+    });
+    const socket = new FakeSocket();
+    await createSerialSession(mock.ctx)(fakeConnection(socket));
+
+    openMock.mockReturnValueOnce("defer");
+    await deliver(socket, {
+      type: "connect",
+      data: { path: "/dev/ttyUSB0", baudRate: 9600 },
+    });
+    socket.emit("close");
+    ports[0].finishOpen?.();
+
+    expect(ports[0].isOpen).toBe(false);
+    expect(socket.sent).not.toContainEqual({ type: "connected" });
+  });
+
+  it("keeps the new port when a second connect replaces the first", async () => {
+    mock = createMockCtx({
+      pluginId: "serial",
+      capabilities: ["network:serve", "device:serial"],
+    });
+    const socket = new FakeSocket();
+    await createSerialSession(mock.ctx)(fakeConnection(socket));
+
+    const cfg = { path: "/dev/ttyUSB0", baudRate: 9600 };
+    await deliver(socket, { type: "connect", data: cfg });
+    await deliver(socket, { type: "connect", data: cfg });
+    expect(ports[0].isOpen).toBe(false);
+    expect(ports[1].isOpen).toBe(true);
+
+    socket.sent.length = 0;
+    await deliver(socket, { type: "disconnect" });
+    expect(ports[1].isOpen).toBe(false);
+    expect(socket.sent).toEqual([{ type: "disconnected" }]);
   });
 });

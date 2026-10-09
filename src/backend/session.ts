@@ -30,11 +30,17 @@ export function createSerialSession(ctx: PluginContext) {
       }
     };
 
+    let closed = false;
+
+    const closePort = (target: SerialPort | null) => {
+      if (target?.isOpen) target.close();
+    };
+
     const cleanup = () => {
-      if (port?.isOpen) {
-        port.close();
-      }
+      closed = true;
+      const current = port;
       port = null;
+      closePort(current);
     };
 
     if (!connection.isDataUnlocked()) {
@@ -77,10 +83,9 @@ export function createSerialSession(ctx: PluginContext) {
           case "connect": {
             await ctx.capabilities.require("device:serial");
 
-            if (port?.isOpen) {
-              port.close();
-              port = null;
-            }
+            const previous = port;
+            port = null;
+            closePort(previous);
 
             const cfg = data as SerialConnectData;
             if (!cfg?.path || !cfg?.baudRate) {
@@ -103,7 +108,12 @@ export function createSerialSession(ctx: PluginContext) {
                 if (err) {
                   ctx.log.error(`Serial port open failed for ${cfg.path}`, err);
                   send({ type: "error", data: err.message });
-                  port = null;
+                  if (port === opened) port = null;
+                  return;
+                }
+                // The socket closed or another connect came in while opening.
+                if (closed || port !== opened) {
+                  opened.close();
                   return;
                 }
                 ctx.log.info(
@@ -113,14 +123,17 @@ export function createSerialSession(ctx: PluginContext) {
               });
 
               opened.on("data", (chunk: Buffer) => {
+                if (port !== opened) return;
                 send({ type: "data", data: chunk.toString("binary") });
               });
 
               opened.on("error", (err) => {
+                if (port !== opened) return;
                 send({ type: "error", data: err.message });
               });
 
               opened.on("close", () => {
+                if (port !== opened) return;
                 send({ type: "disconnected" });
                 port = null;
               });
@@ -144,7 +157,9 @@ export function createSerialSession(ctx: PluginContext) {
           }
 
           case "disconnect": {
-            cleanup();
+            const current = port;
+            port = null;
+            closePort(current);
             send({ type: "disconnected" });
             break;
           }

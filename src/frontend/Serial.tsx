@@ -162,6 +162,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
 
     ws.onclose = () => {
       connectedRef.current = false;
+      setStatus((prev) => (prev === "error" ? prev : "disconnected"));
     };
 
     ws.onerror = () => {
@@ -172,8 +173,11 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
   // ── Web Serial API path ────────────────────────────────────────────────
 
   const disconnectWebSerial = useCallback(async () => {
+    // The port only closes once both streams are unlocked.
     try {
-      webSerialReaderRef.current?.cancel();
+      const reader = webSerialReaderRef.current;
+      await reader?.cancel();
+      reader?.releaseLock();
       webSerialWriterRef.current?.releaseLock();
       await webSerialPortRef.current?.close();
     } catch {
@@ -217,7 +221,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
           for (;;) {
             const { value, done } = await reader.read();
             if (done) break;
-            write(decoder.decode(value));
+            write(decoder.decode(value, { stream: true }));
           }
         } catch {
           // port closed
@@ -292,7 +296,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     terminal.options.cursorBlink = true;
     terminal.options.scrollback = 10000;
 
-    terminal.onData((data) => {
+    const onData = terminal.onData((data) => {
       if (!connectedRef.current) return;
       if (useWebSerial) {
         const encoder = new TextEncoder();
@@ -305,6 +309,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     connect();
 
     return () => {
+      onData.dispose();
       disconnect();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
