@@ -1,7 +1,7 @@
 {
   "id": "serial",
   "name": "Serial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open a serial console to a router, switch or other device plugged into your computer.",
   "author": {
     "name": "Termix"
@@ -20,17 +20,29 @@
     "termix": ">=26.10.0",
     "api": "^1.2"
   },
-  "capabilities": ["network:serve", "device:serial", "ui:surface"],
-  "nativeDependencies": ["serialport"],
+  "capabilities": [
+    "network:serve",
+    "device:serial",
+    "ui:surface"
+  ],
+  "nativeDependencies": [
+    "serialport"
+  ],
   "locales": "locales",
-  "platforms": ["linux", "win32", "darwin"],
+  "platforms": [
+    "linux",
+    "win32",
+    "darwin"
+  ],
   "contributes": {
     "tabs": [
       {
         "id": "serial",
         "titleKey": "nav.serial",
         "icon": "Usb",
-        "openFrom": ["rail"]
+        "openFrom": [
+          "rail"
+        ]
       }
     ],
     "panels": [
@@ -40,7 +52,9 @@
         "icon": "Usb"
       }
     ],
-    "uses": ["terminal.resolveTheme"]
+    "uses": [
+      "terminal.resolveTheme"
+    ]
   },
   "desktop": "local"
 }
