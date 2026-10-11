@@ -20,29 +20,17 @@
     "termix": ">=26.10.0",
     "api": "^1.2"
   },
-  "capabilities": [
-    "network:serve",
-    "device:serial",
-    "ui:surface"
-  ],
-  "nativeDependencies": [
-    "serialport"
-  ],
+  "capabilities": ["network:serve", "device:serial", "ui:surface"],
+  "nativeDependencies": ["serialport"],
   "locales": "locales",
-  "platforms": [
-    "linux",
-    "win32",
-    "darwin"
-  ],
+  "platforms": ["linux", "win32", "darwin"],
   "contributes": {
     "tabs": [
       {
         "id": "serial",
         "titleKey": "nav.serial",
         "icon": "Usb",
-        "openFrom": [
-          "rail"
-        ]
+        "openFrom": ["rail"]
       }
     ],
     "panels": [
@@ -52,9 +40,7 @@
         "icon": "Usb"
       }
     ],
-    "uses": [
-      "terminal.resolveTheme"
-    ]
+    "uses": ["terminal.resolveTheme"]
   },
   "desktop": "local"
 }
