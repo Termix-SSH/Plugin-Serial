@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Sériový"
+  },
+  "serial": {
+    "title": "Sériový",
+    "portLabel": "Port",
+    "portPlaceholder": "/dev/ttyUSB0 alebo COM3",
+    "baudRateLabel": "Rýchlosť prenosu",
+    "dataBitsLabel": "Dátové bity",
+    "stopBitsLabel": "Záverečné bity",
+    "parityLabel": "Parita",
+    "parityNone": "Žiadna",
+    "parityEven": "Párna",
+    "parityOdd": "Nepárna",
+    "connect": "Pripojiť k sériovému portu",
+    "refreshPorts": "Obnoviť porty",
+    "disconnected": "Sériový port odpojený",
+    "wsError": "Chyba WebSocketu",
+    "errorNoServerUrl": "Nie je nakonfigurovaná adresa servera",
+    "notSupportedTitle": "Sériové pripojenie nie je podporované",
+    "notSupported": "Sériové pripojenia vyžadujú prehliadač s podporou Web Serial API (Chrome, Edge alebo Firefox 151+) alebo desktopovú aplikáciu Termix.",
+    "hideHint": "Kliknutím pravým tlačidlom na ikonu Sériový v bočnom paneli ju skryjete.",
+    "browserPickerHint": "Kliknutím na Pripojiť sa otvorí výber portu v prehliadači na výber zariadenia.",
+    "opening": "Otváram {{path}}",
+    "baudDetail": "{{baud}} baud"
+  }
+}

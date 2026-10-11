@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Seriál"
+    "serial": "Sériový"
   },
   "serial": {
-    "title": "Seriál",
+    "title": "Sériový",
     "portLabel": "Port",
     "portPlaceholder": "/dev/ttyUSB0 nebo COM3",
     "baudRateLabel": "Přenosová rychlost",
     "dataBitsLabel": "Data",
-    "stopBitsLabel": "Zastávka",
+    "stopBitsLabel": "Zákon",
     "parityLabel": "Parita",
-    "parityNone": "Žádný",
-    "parityEven": "Dokonce",
-    "parityOdd": "Zvláštní",
-    "connect": "Připojení k sériovému",
-    "disconnect": "Odpojit",
+    "parityNone": "Žádná",
+    "parityEven": "Sudá",
+    "parityOdd": "Lichá",
+    "connect": "Připojit k sériovému portu",
     "refreshPorts": "Obnovit porty",
-    "connected": "Připojeno k {{path}} rychlostí {{baud}} baudu",
     "disconnected": "Sériový port odpojen",
-    "connectionError": "Nepodařilo se otevřít sériový port",
     "wsError": "Chyba WebSocketu",
-    "errorNoServerUrl": "Není nakonfigurována žádná adresa URL serveru",
-    "notSupportedTitle": "Sériové číslo není podporováno",
-    "notSupported": "Sériová připojení vyžadují prohlížeč s podporou webového sériového API (Chrome, Edge nebo Firefox 151+) nebo desktopovou aplikaci Termix.",
-    "hideHint": "Kartu Sériové číslo můžete skrýt v části Profil uživatele > Vzhled > Postranní panel > Navigace.",
-    "browserPickerHint": "Klikněte na tlačítko Připojit a prohlížeč otevře výběr portu pro výběr zařízení."
+    "errorNoServerUrl": "Není nakonfigurována adresa serveru",
+    "notSupportedTitle": "Sériové připojení není podporováno",
+    "notSupported": "Sériová připojení vyžadují prohlížeč s podporou Web Serial API (Chrome, Edge nebo Firefox 151+) nebo desktopovou aplikaci Termix.",
+    "hideHint": "Kliknutím pravým tlačítkem na ikonu Sériový v postranním panelu ji můžete skrýt.",
+    "browserPickerHint": "Klikněte na Připojit a prohlížeč otevře výběr portu pro zvolení zařízení.",
+    "opening": "Otevírání {{path}}",
+    "baudDetail": "{{baud}} baud"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Serial"
+  },
+  "serial": {
+    "title": "Serial",
+    "portLabel": "Port",
+    "portPlaceholder": "/dev/ttyUSB0 atau COM3",
+    "baudRateLabel": "Kadar Baud",
+    "dataBitsLabel": "Data",
+    "stopBitsLabel": "Henti",
+    "parityLabel": "Pariti",
+    "parityNone": "Tiada",
+    "parityEven": "Genap",
+    "parityOdd": "Ganjil",
+    "connect": "Sambung ke Serial",
+    "refreshPorts": "Muat semula port",
+    "disconnected": "Port serial terputus",
+    "wsError": "Ralat WebSocket",
+    "errorNoServerUrl": "Tiada URL pelayan dikonfigurasi",
+    "notSupportedTitle": "Serial Tidak Disokong",
+    "notSupported": "Sambungan serial memerlukan pelayar dengan sokongan Web Serial API (Chrome, Edge, atau Firefox 151+), atau aplikasi desktop Termix.",
+    "hideHint": "Klik kanan ikon Serial di bar sisi untuk menyembunyikannya.",
+    "browserPickerHint": "Klik Sambung dan pelayar anda akan membuka pemilih port untuk memilih peranti.",
+    "opening": "Membuka {{path}}",
+    "baudDetail": "{{baud}} baud"
+  }
+}

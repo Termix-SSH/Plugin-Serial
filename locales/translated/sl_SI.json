@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Serijski"
+  },
+  "serial": {
+    "title": "Serijski",
+    "portLabel": "Vrata",
+    "portPlaceholder": "/dev/ttyUSB0 ali COM3",
+    "baudRateLabel": "Hitrost prenosa",
+    "dataBitsLabel": "Podatki",
+    "stopBitsLabel": "Zaustavitev",
+    "parityLabel": "Pariteta",
+    "parityNone": "Brez",
+    "parityEven": "Soda",
+    "parityOdd": "Lih",
+    "connect": "Poveži s serijskim",
+    "refreshPorts": "Osveži vrata",
+    "disconnected": "Serijska vrata so odklopljena",
+    "wsError": "Napaka WebSocket",
+    "errorNoServerUrl": "Ni konfiguriranega URL-ja strežnika",
+    "notSupportedTitle": "Serijska povezava ni podprta",
+    "notSupported": "Serijske povezave zahtevajo brskalnik s podporo za Web Serial API (Chrome, Edge ali Firefox 151+) ali namizno aplikacijo Termix.",
+    "hideHint": "Za skritje ikone serijske povezave v stranski vrstici kliknite z desno tipko.",
+    "browserPickerHint": "Kliknite Poveži in vaš brskalnik bo odprl izbirnik vrat za izbiro naprave.",
+    "opening": "Odpiranje {{path}}",
+    "baudDetail": "{{baud}} baud"
+  }
+}

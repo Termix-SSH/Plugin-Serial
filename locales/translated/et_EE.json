@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Jada"
+  },
+  "serial": {
+    "title": "Jada",
+    "portLabel": "Port",
+    "portPlaceholder": "/dev/ttyUSB0 või COM3",
+    "baudRateLabel": "Baud",
+    "dataBitsLabel": "Andmebitid",
+    "stopBitsLabel": "Lõppbitid",
+    "parityLabel": "Paarsus",
+    "parityNone": "Puudub",
+    "parityEven": "Paariline",
+    "parityOdd": "Päratut",
+    "connect": "Ühenda jadapordiga",
+    "refreshPorts": "Värskenda porte",
+    "disconnected": "Jadapordi ühendus katkenud",
+    "wsError": "WebSocketi viga",
+    "errorNoServerUrl": "Serveri URL-i pole määratud",
+    "notSupportedTitle": "Jadaport ei ole toetatud",
+    "notSupported": "Jadapordi ühendused nõuavad brauserit, mis toetab Web Serial API-d (Chrome, Edge või Firefox 151+), või Termixi lauaarvuti rakendust.",
+    "hideHint": "Jadapordi ikooni varjamiseks klõpsa sellel külgribal parema nupuga.",
+    "browserPickerHint": "Klõpsa Ühenda ja brauser avab seadme valiku akna.",
+    "opening": "Avaldas {{path}}",
+    "baudDetail": "{{baud}} baud"
+  }
+}

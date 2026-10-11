@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Серійний"
+    "serial": "Серіальний"
   },
   "serial": {
-    "title": "Серійний",
+    "title": "Серіальний",
     "portLabel": "Порт",
     "portPlaceholder": "/dev/ttyUSB0 або COM3",
-    "baudRateLabel": "Швидкість передачі даних",
+    "baudRateLabel": "Швидкість передачі",
     "dataBitsLabel": "Дані",
-    "stopBitsLabel": "СТІЙ",
-    "parityLabel": "Паритет",
-    "parityNone": "Жоден",
-    "parityEven": "Навіть",
-    "parityOdd": "Дивний",
-    "connect": "Підключення до послідовного порту",
-    "disconnect": "Відключитися",
+    "stopBitsLabel": "Стоп",
+    "parityLabel": "Парність",
+    "parityNone": "Немає",
+    "parityEven": "Парна",
+    "parityOdd": "Непарна",
+    "connect": "Підключитися до серіального порту",
     "refreshPorts": "Оновити порти",
-    "connected": "Підключено до {{path}} зі швидкістю {{baud}} бод",
-    "disconnected": "Послідовний порт відключено",
-    "connectionError": "Не вдалося відкрити послідовний порт",
+    "disconnected": "Серіальний порт відключено",
     "wsError": "Помилка WebSocket",
     "errorNoServerUrl": "URL-адреса сервера не налаштована",
-    "notSupportedTitle": "Серійний номер не підтримується",
-    "notSupported": "Для послідовних з’єднань потрібен браузер із підтримкою Web Serial API (Chrome, Edge або Firefox 151+) або настільний додаток Termix.",
-    "hideHint": "Ви можете приховати вкладку «Серійний номер» у розділі «Профіль користувача» > «Зовнішній вигляд» > «Бічна панель» > «Навігація».",
-    "browserPickerHint": "Натисніть «Підключитися», і ваш браузер відкриє вибір порту для вибору пристрою."
+    "notSupportedTitle": "Серіальний порт не підтримується",
+    "notSupported": "Для підключення до серіального порту потрібен браузер із підтримкою Web Serial API (Chrome, Edge або Firefox 151+) або десктопний додаток Termix.",
+    "hideHint": "Клацніть правою кнопкою миші на іконці «Серіальний» у бічній панелі, щоб сховати її.",
+    "browserPickerHint": "Натисніть «Підключитися», і браузер відкриє вікно вибору порту для обрання пристрою.",
+    "opening": "Відкриття {{path}}",
+    "baudDetail": "{{baud}} бод"
   }
 }

@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "تسلسلي"
+    "serial": "سيريال"
   },
   "serial": {
-    "title": "منفذ تسلسلي",
+    "title": "سيريال",
     "portLabel": "المنفذ",
-    "portPlaceholder": "/dev/ttyUSB0 or COM3",
-    "baudRateLabel": "معدل الباود",
+    "portPlaceholder": "/dev/ttyUSB0 أو COM3",
+    "baudRateLabel": "معدل البود",
     "dataBitsLabel": "البيانات",
-    "stopBitsLabel": "التوقف",
+    "stopBitsLabel": "الإيقاف",
     "parityLabel": "التكافؤ",
-    "parityNone": "بلا",
+    "parityNone": "بدون",
     "parityEven": "زوجي",
     "parityOdd": "فردي",
-    "connect": "اتصال",
-    "disconnect": "قطع الاتصال",
+    "connect": "الاتصال بالسيريال",
     "refreshPorts": "تحديث المنافذ",
-    "connected": "متصل بـ {{path}} بسرعة {{baud}} باود",
-    "disconnected": "تم قطع الاتصال بالمنفذ التسلسلي",
-    "connectionError": "فشل في فتح المنفذ التسلسلي",
+    "disconnected": "انقطع اتصال منفذ السيريال",
     "wsError": "خطأ في WebSocket",
     "errorNoServerUrl": "لم يتم تكوين عنوان URL للخادم",
-    "notSupportedTitle": "المنفذ التسلسلي غير مدعوم",
-    "notSupported": "تتطلب الاتصالات التسلسلية متصفحًا يدعم Web Serial API (Chrome، أو Edge، أو Firefox 151+)، أو تطبيق Termix لسطح المكتب.",
-    "hideHint": "يمكنك إخفاء تبويب المنفذ التسلسلي من الملف الشخصي > المظهر > الشريط الجانبي > التنقل.",
-    "browserPickerHint": "انقر على Connect وسيفتح متصفحك نافذة اختيار المنفذ لتحديد الجهاز."
+    "notSupportedTitle": "السيريال غير مدعوم",
+    "notSupported": "تتطلب اتصالات السيريال متصفحًا يدعم واجهة برمجة تطبيقات Web Serial (مثل Chrome أو Edge أو Firefox 151+)، أو تطبيق Termix المكتبي.",
+    "hideHint": "انقر بزر الماوس الأيمن على أيقونة السيريال في الشريط الجانبي لإخفائها.",
+    "browserPickerHint": "انقر على الاتصال وسيفتح متصفحك منتقي منافذ لاختيار الجهاز.",
+    "opening": "جارٍ فتح {{path}}",
+    "baudDetail": "{{baud}} بود"
   }
 }

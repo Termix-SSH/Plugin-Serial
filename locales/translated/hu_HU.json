@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Sorozatszám"
+    "serial": "Soros"
   },
   "serial": {
-    "title": "Sorozatszám",
-    "portLabel": "Kikötő",
+    "title": "Soros",
+    "portLabel": "Port",
     "portPlaceholder": "/dev/ttyUSB0 vagy COM3",
-    "baudRateLabel": "Baud sebesség",
+    "baudRateLabel": "Baudráta",
     "dataBitsLabel": "Adat",
     "stopBitsLabel": "Stop",
     "parityLabel": "Paritás",
-    "parityNone": "Egyik sem",
-    "parityEven": "Még",
+    "parityNone": "Nincs",
+    "parityEven": "Páros",
     "parityOdd": "Páratlan",
-    "connect": "Csatlakozás soros porthoz",
-    "disconnect": "Leválasztás",
-    "refreshPorts": "Frissítse a portokat",
-    "connected": "{{path}} -hoz csatlakoztatva {{baud}} baud sebességgel",
-    "disconnected": "Soros port leválasztva",
-    "connectionError": "Nem sikerült megnyitni a soros portot",
+    "connect": "Csatlakozás soros port",
+    "refreshPorts": "Portok frissítése",
+    "disconnected": "A soros port leválasztva",
     "wsError": "WebSocket hiba",
-    "errorNoServerUrl": "Nincs konfigurálva szerver URL",
-    "notSupportedTitle": "Sorozatszám Nem támogatott",
-    "notSupported": "A soros kapcsolatokhoz Web Serial API-t támogató böngésző (Chrome, Edge vagy Firefox 151+), vagy a Termix asztali alkalmazás szükséges.",
-    "hideHint": "A Sorozat fület elrejtheted a Felhasználói profil > Megjelenés > Oldalsáv > Navigáció alatt.",
-    "browserPickerHint": "Kattintson a Csatlakozás gombra, és a böngészője megnyit egy portválasztót az eszköz kiválasztásához."
+    "errorNoServerUrl": "Nincs konfigurált szerver URL",
+    "notSupportedTitle": "A soros kapcsolat nem támogatott",
+    "notSupported": "A soros kapcsolatokhoz olyan böngésző szükséges, amely támogatja a Web Serial API-t (Chrome, Edge vagy Firefox 151+), vagy a Termix asztali alkalmazás.",
+    "hideHint": "Kattints jobb gombbal a soros ikonra az oldalsávban, hogy elrejtse.",
+    "browserPickerHint": "Kattintson a Csatlakozás gombra, és a böngésző megnyitja a portválasztót az eszköz kiválasztásához.",
+    "opening": "{{path}} megnyitása",
+    "baudDetail": "{{baud}} baud"
   }
 }

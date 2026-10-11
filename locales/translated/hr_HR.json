@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Serijalno"
+  },
+  "serial": {
+    "title": "Serijalno",
+    "portLabel": "Port",
+    "portPlaceholder": "/dev/ttyUSB0 ili COM3",
+    "baudRateLabel": "Brzina prijenosa (baud)",
+    "dataBitsLabel": "Podaci",
+    "stopBitsLabel": "Zaustavni bitovi",
+    "parityLabel": "Paritet",
+    "parityNone": "Nijedan",
+    "parityEven": "Parni",
+    "parityOdd": "Neparni",
+    "connect": "Poveži se na serijalni port",
+    "refreshPorts": "Osvježi portove",
+    "disconnected": "Serijalni port je isključen",
+    "wsError": "Greška WebSocketa",
+    "errorNoServerUrl": "URL poslužitelja nije konfiguriran",
+    "notSupportedTitle": "Serijalna veza nije podržana",
+    "notSupported": "Serijalne veze zahtijevaju preglednik s podrškom za Web Serial API (Chrome, Edge ili Firefox 151+) ili Termix desktop aplikaciju.",
+    "hideHint": "Desnim klikom na ikonu Serijalno u bočnoj traci možete je sakriti.",
+    "browserPickerHint": "Kliknite Poveži se, a preglednik će otvoriti izbornik za odabir uređaja.",
+    "opening": "Otvaranje {{path}}",
+    "baudDetail": "{{baud}} baud"
+  }
+}

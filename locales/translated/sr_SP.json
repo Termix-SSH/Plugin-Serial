@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Серијски"
+    "serial": "Серијал"
   },
   "serial": {
-    "title": "Серијски",
-    "portLabel": "Лука",
+    "title": "Серијал",
+    "portLabel": "Порт",
     "portPlaceholder": "/dev/ttyUSB0 или COM3",
-    "baudRateLabel": "Брзина преноса података",
+    "baudRateLabel": "Брзина преноса",
     "dataBitsLabel": "Подаци",
-    "stopBitsLabel": "Заустави",
+    "stopBitsLabel": "Стоп",
     "parityLabel": "Паритет",
-    "parityNone": "Ниједан",
-    "parityEven": "Чак",
-    "parityOdd": "Чудно",
-    "connect": "Повежи се са серијским",
-    "disconnect": "Прекини везу",
+    "parityNone": "Нема",
+    "parityEven": "Паран",
+    "parityOdd": "Непаран",
+    "connect": "Повежи се на серијал",
     "refreshPorts": "Освежи портове",
-    "connected": "Повезано са {{path}} брзином {{baud}} бауда",
-    "disconnected": "Серијски порт је искључен",
-    "connectionError": "Отварање серијског порта није успело",
+    "disconnected": "Серијални порт је искључен",
     "wsError": "Грешка WebSocket-а",
-    "errorNoServerUrl": "Није конфигурисан URL сервера",
-    "notSupportedTitle": "Серијски број није подржан",
-    "notSupported": "Серијске везе захтевају прегледач са подршком за Web Serial API (Chrome, Edge или Firefox 151+) или Termix десктоп апликацију.",
-    "hideHint": "Картицу Серијски број можете сакрити под Кориснички профил > Изглед > Бочна трака > Навигација.",
-    "browserPickerHint": "Кликните на Повежи се и ваш прегледач ће отворити бирач портова за избор уређаја."
+    "errorNoServerUrl": "URL сервера није конфигурисан",
+    "notSupportedTitle": "Серијал није подржан",
+    "notSupported": "Серијалне везе захтевају прегледач са подршком за Web Serial API (Chrome, Edge или Firefox 151+) или Termix десктоп апликацију.",
+    "hideHint": "Кликните десним тастером на иконицу Серијал у бочној траци да бисте је сакрили.",
+    "browserPickerHint": "Кликните на Повежи се и прегледач ће отворити изборник портова за избор уређаја.",
+    "opening": "Отварање {{path}}",
+    "baudDetail": "{{baud}} baud"
   }
 }

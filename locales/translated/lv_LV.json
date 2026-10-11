@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Seriālais"
+  },
+  "serial": {
+    "title": "Seriālais",
+    "portLabel": "Ports",
+    "portPlaceholder": "/dev/ttyUSB0 vai COM3",
+    "baudRateLabel": "Bādu ātrums",
+    "dataBitsLabel": "Dati",
+    "stopBitsLabel": "Stop",
+    "parityLabel": "Pāritāte",
+    "parityNone": "Nav",
+    "parityEven": "Pāra",
+    "parityOdd": "Nepāra",
+    "connect": "Savienot ar seriālo",
+    "refreshPorts": "Atsvaidzināt portus",
+    "disconnected": "Seriālais ports atvienots",
+    "wsError": "WebSocket kļūda",
+    "errorNoServerUrl": "Nav konfigurēts servera URL",
+    "notSupportedTitle": "Seriālais nav atbalstīts",
+    "notSupported": "Seriālajiem savienojumiem ir nepieciešams pārlūks ar Web Serial API atbalstu (Chrome, Edge vai Firefox 151+) vai Termix darbvirsmas lietotne.",
+    "hideHint": "Lai slēptu seriālā ikonu sānjoslā, noklikšķiniet uz tās ar peles labo pogu.",
+    "browserPickerHint": "Noklikšķiniet uz Savienot, un pārlūks atvērs portu izvēlni ierīces izvēlei.",
+    "opening": "Atver {{path}}",
+    "baudDetail": "{{baud}} bādi"
+  }
+}

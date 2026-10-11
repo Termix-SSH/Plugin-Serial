@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "ซีเรียล"
+    "serial": "Serial"
   },
   "serial": {
-    "title": "ซีเรียล",
-    "portLabel": "ท่าเรือ",
+    "title": "Serial",
+    "portLabel": "พอร์ต",
     "portPlaceholder": "/dev/ttyUSB0 หรือ COM3",
-    "baudRateLabel": "อัตราบิต",
+    "baudRateLabel": "อัตราโบด",
     "dataBitsLabel": "ข้อมูล",
     "stopBitsLabel": "หยุด",
-    "parityLabel": "ความเท่าเทียมกัน",
+    "parityLabel": "พาริตี",
     "parityNone": "ไม่มี",
-    "parityEven": "สม่ำเสมอ",
-    "parityOdd": "แปลก",
-    "connect": "เชื่อมต่อกับพอร์ตอนุกรม",
-    "disconnect": "ตัดการเชื่อมต่อ",
-    "refreshPorts": "พอร์ตรีเฟรช",
-    "connected": "เชื่อมต่อกับ {{path}} ที่ความเร็ว {{baud}} บอด",
-    "disconnected": "พอร์ตอนุกรมถูกตัดการเชื่อมต่อ",
-    "connectionError": "ไม่สามารถเปิดพอร์ตอนุกรมได้",
+    "parityEven": "คู่",
+    "parityOdd": "คี่",
+    "connect": "เชื่อมต่อกับ Serial",
+    "refreshPorts": "รีเฟรชพอร์ต",
+    "disconnected": "พอร์ต Serial ถูกตัดการเชื่อมต่อ",
     "wsError": "ข้อผิดพลาด WebSocket",
     "errorNoServerUrl": "ไม่ได้กำหนดค่า URL เซิร์ฟเวอร์",
-    "notSupportedTitle": "ไม่รองรับหมายเลขซีเรียล",
-    "notSupported": "การเชื่อมต่อแบบอนุกรมจำเป็นต้องใช้เบราว์เซอร์ที่รองรับ Web Serial API (Chrome, Edge หรือ Firefox เวอร์ชัน 151 ขึ้นไป) หรือแอปพลิเคชัน Termix บนเดสก์ท็อป",
-    "hideHint": "คุณสามารถซ่อนแท็บ Serial ได้ที่ โปรไฟล์ผู้ใช้ > ลักษณะที่ปรากฏ > แถบด้านข้าง > การนำทาง",
-    "browserPickerHint": "คลิก \"เชื่อมต่อ\" แล้วเบราว์เซอร์ของคุณจะเปิดตัวเลือกพอร์ตเพื่อเลือกอุปกรณ์"
+    "notSupportedTitle": "ไม่รองรับ Serial",
+    "notSupported": "การเชื่อมต่อ Serial ต้องการเบราว์เซอร์ที่รองรับ Web Serial API (Chrome, Edge หรือ Firefox 151+) หรือแอป Termix บนเดสก์ท็อป",
+    "hideHint": "คลิกขวาที่ไอคอน Serial ในแถบด้านข้างเพื่อซ่อน",
+    "browserPickerHint": "คลิกเชื่อมต่อ แล้วเบราว์เซอร์จะเปิดตัวเลือกพอร์ตเพื่อเลือกอุปกรณ์",
+    "opening": "กำลังเปิด {{path}}",
+    "baudDetail": "{{baud}} โบด"
   }
 }

@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Seriel"
+    "serial": "Serial"
   },
   "serial": {
-    "title": "Seriel",
-    "portLabel": "Havn",
+    "title": "Serial",
+    "portLabel": "Port",
     "portPlaceholder": "/dev/ttyUSB0 eller COM3",
-    "baudRateLabel": "Baudhastighed",
+    "baudRateLabel": "Baudrate",
     "dataBitsLabel": "Data",
     "stopBitsLabel": "Stop",
     "parityLabel": "Paritet",
     "parityNone": "Ingen",
-    "parityEven": "Endog",
+    "parityEven": "Lige",
     "parityOdd": "Ulige",
-    "connect": "Tilslut til seriel",
-    "disconnect": "Afbryde",
+    "connect": "Forbind til serial",
     "refreshPorts": "Opdater porte",
-    "connected": "Forbundet til {{path}} ved {{baud}} baud",
-    "disconnected": "Seriel port afbrudt",
-    "connectionError": "Kunne ikke åbne seriel port",
+    "disconnected": "Serialporten er frakoblet",
     "wsError": "WebSocket-fejl",
-    "errorNoServerUrl": "Ingen server-URL konfigureret",
-    "notSupportedTitle": "Seriel understøttes ikke",
-    "notSupported": "Serielle forbindelser kræver en browser med Web Serial API-understøttelse (Chrome, Edge eller Firefox 151+) eller Termix-desktopappen.",
-    "hideHint": "Du kan skjule fanen Seriel under Brugerprofil > Udseende > Sidebjælke > Navigation.",
-    "browserPickerHint": "Klik på Opret forbindelse, og din browser åbner en portvælger, hvor du kan vælge enheden."
+    "errorNoServerUrl": "Ingen server-URL er konfigureret",
+    "notSupportedTitle": "Serial understøttes ikke",
+    "notSupported": "Serialforbindelser kræver en browser med understøttelse af Web Serial API (Chrome, Edge eller Firefox 151+), eller Termix desktop-appen.",
+    "hideHint": "Højreklik på serialikonet i sidebjælken for at skjule det.",
+    "browserPickerHint": "Klik på Forbind, og din browser åbner en portvælger, så du kan vælge enheden.",
+    "opening": "Åbner {{path}}",
+    "baudDetail": "{{baud}} baud"
   }
 }

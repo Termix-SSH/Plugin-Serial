@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "serial": "Serijinis"
+  },
+  "serial": {
+    "title": "Serijinis",
+    "portLabel": "Prievadas",
+    "portPlaceholder": "/dev/ttyUSB0 arba COM3",
+    "baudRateLabel": "Baudų dažnis",
+    "dataBitsLabel": "Duomenys",
+    "stopBitsLabel": "Stabdymas",
+    "parityLabel": "Lyginumas",
+    "parityNone": "Nėra",
+    "parityEven": "Lyginis",
+    "parityOdd": "Nelyginis",
+    "connect": "Prisijungti prie serijinio",
+    "refreshPorts": "Atnaujinti prievadus",
+    "disconnected": "Serijinis prievadas atjungtas",
+    "wsError": "WebSocket klaida",
+    "errorNoServerUrl": "Nenurodytas serverio URL",
+    "notSupportedTitle": "Serijinis nepalaikomas",
+    "notSupported": "Serijiniai ryšiai reikalauja naršyklės, palaikančios Web Serial API (Chrome, Edge arba Firefox 151+), arba Termix darbalaukio programos.",
+    "hideHint": "Dešiniuoju pelės mygtuku spustelėkite serijinio piktogramą šoninėje juostoje, kad ją paslėptumėte.",
+    "browserPickerHint": "Spustelėkite Prisijungti, ir naršyklė atvers prievado pasirinkimą, kad galėtumėte pasirinkti įrenginį.",
+    "opening": "Atveriamas {{path}}",
+    "baudDetail": "{{baud}} baudų"
+  }
+}

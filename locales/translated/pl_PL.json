@@ -1,12 +1,12 @@
 {
   "nav": {
-    "serial": "Port szeregowy"
+    "serial": "Szczytowy"
   },
   "serial": {
-    "title": "Port szeregowy",
+    "title": "Szczytowy",
     "portLabel": "Port",
     "portPlaceholder": "/dev/ttyUSB0 lub COM3",
-    "baudRateLabel": "Szybkość transmisji",
+    "baudRateLabel": "Prędkość transmisji",
     "dataBitsLabel": "Dane",
     "stopBitsLabel": "Stop",
     "parityLabel": "Parzystość",
@@ -14,16 +14,15 @@
     "parityEven": "Parzysta",
     "parityOdd": "Nieparzysta",
     "connect": "Połącz z portem szeregowym",
-    "disconnect": "Odłącz",
     "refreshPorts": "Odśwież porty",
-    "connected": "Połączono z {{path}} z szybkością {{baud}} bodów",
-    "disconnected": "Port szeregowy rozłączony",
-    "connectionError": "Nie udało się otworzyć portu szeregowego",
+    "disconnected": "Port szeregowy odłączony",
     "wsError": "Błąd WebSocket",
-    "errorNoServerUrl": "Brak skonfigurowanego adresu URL serwera",
+    "errorNoServerUrl": "Nie skonfigurowano adresu URL serwera",
     "notSupportedTitle": "Port szeregowy nieobsługiwany",
-    "notSupported": "Połączenia szeregowe wymagają przeglądarki obsługującej Web Serial API (Chrome, Edge lub Firefox 151+) albo aplikacji desktopowej Termix.",
-    "hideHint": "Kartę Port szeregowy można ukryć w: Profil użytkownika > Wygląd > Pasek boczny > Nawigacja.",
-    "browserPickerHint": "Kliknij Połącz, a przeglądarka otworzy okno wyboru portu, w którym wskażesz urządzenie."
+    "notSupported": "Połączenia szeregowe wymagają przeglądarki obsługującej Web Serial API (Chrome, Edge lub Firefox 151+) lub aplikacji Termix na komputerze.",
+    "hideHint": "Kliknij prawym przyciskiem myszy ikonę portu szeregowego na pasku bocznym, aby ją ukryć.",
+    "browserPickerHint": "Kliknij Połącz, a przeglądarka otworzy okno wyboru portu, aby wybrać urządzenie.",
+    "opening": "Otwieranie {{path}}",
+    "baudDetail": "{{baud}} baud"
   }
 }

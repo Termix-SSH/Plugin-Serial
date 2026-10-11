@@ -1,29 +1,28 @@
 {
   "nav": {
-    "serial": "Последовательный порт"
+    "serial": "Serial"
   },
   "serial": {
-    "title": "Последовательный порт",
+    "title": "Serial",
     "portLabel": "Порт",
-    "portPlaceholder": "/dev/ttyUSB0 or COM3",
+    "portPlaceholder": "/dev/ttyUSB0 или COM3",
     "baudRateLabel": "Скорость передачи",
-    "dataBitsLabel": "Биты данных",
-    "stopBitsLabel": "Стоп-биты",
-    "parityLabel": "Чётность",
+    "dataBitsLabel": "Данные",
+    "stopBitsLabel": "Стоп",
+    "parityLabel": "Четность",
     "parityNone": "Нет",
-    "parityEven": "Чётный",
-    "parityOdd": "Нечётный",
-    "connect": "Подключиться",
-    "disconnect": "Отключиться",
+    "parityEven": "Чётная",
+    "parityOdd": "Нечётная",
+    "connect": "Подключиться к Serial",
     "refreshPorts": "Обновить порты",
-    "connected": "Подключено к {{path}} на скорости {{baud}} бод",
-    "disconnected": "Последовательный порт отключен",
-    "connectionError": "Ошибка открытия последовательного порта",
+    "disconnected": "Serial-порт отключён",
     "wsError": "Ошибка WebSocket",
-    "errorNoServerUrl": "Не настроен URL сервера",
-    "notSupportedTitle": "Последовательный порт не поддерживается",
-    "notSupported": "Последовательные подключения требуют браузер с поддержкой Web Serial API (Chrome, Edge или Firefox 151+) или десктопное приложение Termix.",
-    "hideHint": "Вы можете скрыть вкладку «Serial» в разделе «Профиль пользователя» > «Оформление» > «Боковая панель» > «Навигация».",
-    "browserPickerHint": "Нажмите «Подключиться», и браузер откроет окно выбора порта для выбора устройства."
+    "errorNoServerUrl": "URL-адрес сервера не настроен",
+    "notSupportedTitle": "Serial не поддерживается",
+    "notSupported": "Для подключения к Serial требуется браузер с поддержкой Web Serial API (Chrome, Edge или Firefox 151+) или настольное приложение Termix.",
+    "hideHint": "Щёлкните правой кнопкой мыши по значку Serial на боковой панели, чтобы скрыть его.",
+    "browserPickerHint": "Нажмите «Подключиться», и браузер откроет окно выбора порта для выбора устройства.",
+    "opening": "Открытие {{path}}",
+    "baudDetail": "{{baud}} бод"
   }
 }
