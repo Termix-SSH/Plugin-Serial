@@ -72,7 +72,7 @@ Interested in a paid placement to support development? Email [mail@termix.site](
 
 ## Support
 
-Found a bug or have an idea for Serial? Open an issue in this repo: [report a bug](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=feature_request.yml). The quickest way to report a bug is **Report an issue** on this plugin's page in the Termix Plugins tab, which fills in your versions for you.
+Found a bug or have an idea for Serial? Open an issue in this repo: [report a bug](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=feature_request.yml). The quickest way to report a bug is Report an issue on this plugin's page in the Termix Plugins tab, which fills in your versions for you.
 
 Problems with Termix itself (login, hosts, credentials, sharing, sync) go in the [Termix repo](https://github.com/Termix-SSH/Termix/issues/new/choose). Not sure where it goes? Open it there and it will be moved.
 
