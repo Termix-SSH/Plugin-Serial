@@ -28,7 +28,7 @@ Read the [docs](https://docs.termix.site/plugins/serial) to set it up and use it
 
 ## Sponsors
 
-Interested in a paid placement to support development? Email [mail@termix.site](mailto:mail@termix.site).
+For a paid sponsor spot, email [mail@termix.site](mailto:mail@termix.site).
 
 <!-- SPONSORS:START -->
 
@@ -72,14 +72,14 @@ Interested in a paid placement to support development? Email [mail@termix.site](
 
 ## Support
 
-Found a bug or have an idea for Serial? Open an issue in this repo: [report a bug](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=feature_request.yml). The quickest way to report a bug is Report an issue on this plugin's page in the Termix Plugins tab, which fills in your versions for you.
+Bugs and ideas for Serial go in this repo: [report a bug](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Termix-SSH/Plugin-Serial/issues/new?template=feature_request.yml). Report an issue on the plugin's page in the Plugins tab fills in your versions for you.
 
 Problems with Termix itself (login, hosts, credentials, sharing, sync) go in the [Termix repo](https://github.com/Termix-SSH/Termix/issues/new/choose). Not sure where it goes? Open it there and it will be moved.
 
-Please be as detailed as possible, preferably in English. For questions, join the [Discord](https://discord.gg/jVQGdvHDrf) server.
+Add as much detail as you can, in English if possible. For questions, join the [Discord](https://discord.gg/jVQGdvHDrf) server.
 
 <br />
 
 ## License
 
-Distributed under the Apache License Version 2.0. See [LICENSE](LICENSE) for more information.
+Apache License 2.0. See [LICENSE](LICENSE).
