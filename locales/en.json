@@ -24,5 +24,9 @@
     "browserPickerHint": "Click Connect and your browser will open a port picker to choose the device.",
     "opening": "Opening {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Open a serial console to a router, switch or other device plugged into your computer."
   }
 }

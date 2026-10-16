@@ -24,5 +24,9 @@
     "browserPickerHint": "点击“连接”，浏览器将打开端口选择器以选择设备。",
     "opening": "正在打开 {{path}}",
     "baudDetail": "{{baud}} 波特"
+  },
+  "plugin": {
+    "name": "串口控制台",
+    "description": "为接入电脑的路由器、交换机或其他设备打开串口控制台。"
   }
 }
