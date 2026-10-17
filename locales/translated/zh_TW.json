@@ -24,5 +24,9 @@
     "browserPickerHint": "按一下「連線」，瀏覽器將開啟埠選擇器以選擇裝置。",
     "opening": "正在開啟 {{path}}",
     "baudDetail": "{{baud}} 鮑率"
+  },
+  "plugin": {
+    "name": "序列埠主控台",
+    "description": "為連接到電腦的路由器、交換器或其他裝置開啟序列埠主控台。"
   }
 }
