@@ -24,5 +24,9 @@
     "browserPickerHint": "Faceți clic pe Conectare și browserul va deschide un selector de porturi pentru a alege dispozitivul.",
     "opening": "Se deschide {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Deschideți o consolă serială către un router, un switch sau alt dispozitiv conectat la computerul dvs."
   }
 }

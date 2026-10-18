@@ -24,5 +24,9 @@
     "browserPickerHint": "Napsauta Yhdistä, ja selaimesi avaa portinvalitsimen laitteen valitsemiseksi.",
     "opening": "Avataan {{path}}",
     "baudDetail": "{{baud}} baudia"
+  },
+  "plugin": {
+    "name": "Sarja",
+    "description": "Avaa sarjakonsoli reitittimeen, kytkimeen tai muuhun tietokoneeseesi kytkettyyn laitteeseen."
   }
 }

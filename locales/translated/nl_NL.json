@@ -24,5 +24,9 @@
     "browserPickerHint": "Klik op Verbinden en je browser opent een poortkiezer om het apparaat te kiezen.",
     "opening": "{{path}} openen",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Open een seriële console naar een router, switch of ander apparaat dat op je computer is aangesloten."
   }
 }

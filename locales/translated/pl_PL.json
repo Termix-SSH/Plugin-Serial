@@ -24,5 +24,9 @@
     "browserPickerHint": "Kliknij Połącz, a przeglądarka otworzy okno wyboru portu, aby wybrać urządzenie.",
     "opening": "Otwieranie {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Otwórz konsolę szeregową do routera, przełącznika lub innego urządzenia podłączonego do komputera."
   }
 }

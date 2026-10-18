@@ -24,5 +24,9 @@
     "browserPickerHint": "Klõpsa Ühenda ja brauser avab seadme valiku akna.",
     "opening": "Avaldas {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Ava seeriaalne konsool ruuterile, lülitile või teisele arvutisse ühendatud seadmele."
   }
 }

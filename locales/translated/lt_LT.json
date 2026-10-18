@@ -24,5 +24,9 @@
     "browserPickerHint": "Spustelėkite Prisijungti, ir naršyklė atvers prievado pasirinkimą, kad galėtumėte pasirinkti įrenginį.",
     "opening": "Atveriamas {{path}}",
     "baudDetail": "{{baud}} baudų"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Atidarykite serijinę konsolę maršrutizatoriui, komutatoriui ar kitam įrenginiui, prijungtam prie jūsų kompiuterio."
   }
 }

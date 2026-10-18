@@ -24,5 +24,9 @@
     "browserPickerHint": "Kliknutím na Pripojiť sa otvorí výber portu v prehliadači na výber zariadenia.",
     "opening": "Otváram {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Sériový",
+    "description": "Otvorte sériovú konzolu pre router, switch alebo iné zariadenie pripojené k vášmu počítaču."
   }
 }

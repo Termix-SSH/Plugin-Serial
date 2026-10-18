@@ -24,5 +24,9 @@
     "browserPickerHint": "Bağlan'a tıklayın, tarayıcınız cihaz seçmek için bir port seçici açacaktır.",
     "opening": "{{path}} açılıyor",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Seri",
+    "description": "Bilgisayarınıza bağlı bir yönlendirici, anahtar veya başka bir cihaza seri konsol açın."
   }
 }

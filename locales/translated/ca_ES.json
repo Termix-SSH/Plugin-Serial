@@ -24,5 +24,9 @@
     "browserPickerHint": "Feu clic a Connectar i el navegador obrirà un selector de ports per triar el dispositiu.",
     "opening": "Obrint {{path}}",
     "baudDetail": "{{baud}} bauds"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Obriu una consola sèrie per a un router, un commutador o un altre dispositiu connectat al vostre ordinador."
   }
 }

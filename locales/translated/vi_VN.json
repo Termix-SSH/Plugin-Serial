@@ -24,5 +24,9 @@
     "browserPickerHint": "Nhấp vào Kết nối và trình duyệt của bạn sẽ mở trình chọn cổng để chọn thiết bị.",
     "opening": "Đang mở {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Mở bảng điều khiển nối tiếp để kết nối với router, switch hoặc thiết bị khác được cắm vào máy tính của bạn."
   }
 }

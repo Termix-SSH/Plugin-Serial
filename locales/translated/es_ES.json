@@ -24,5 +24,9 @@
     "browserPickerHint": "Haz clic en Conectar y tu navegador abrirá un selector de puertos para elegir el dispositivo.",
     "opening": "Abriendo {{path}}",
     "baudDetail": "{{baud}} baudios"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Abre una consola serie para un enrutador, conmutador u otro dispositivo conectado a tu equipo."
   }
 }

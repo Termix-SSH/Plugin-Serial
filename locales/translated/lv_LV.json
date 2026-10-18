@@ -24,5 +24,9 @@
     "browserPickerHint": "Noklikšķiniet uz Savienot, un pārlūks atvērs portu izvēlni ierīces izvēlei.",
     "opening": "Atver {{path}}",
     "baudDetail": "{{baud}} bādi"
+  },
+  "plugin": {
+    "name": "Seriālais",
+    "description": "Atveriet seriālo kon soli maršrutētājam, slēdzim vai citai ierīcei, kas pievienota jūsu datoram."
   }
 }

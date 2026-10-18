@@ -24,5 +24,9 @@
     "browserPickerHint": "Clique em Conectar e seu navegador abrirá um seletor de portas para escolher o dispositivo.",
     "opening": "Abrindo {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Abra um console serial para um roteador, switch ou outro dispositivo conectado ao seu computador."
   }
 }

@@ -24,5 +24,9 @@
     "browserPickerHint": "Klicken Sie auf Verbinden, und Ihr Browser öffnet einen Port-Auswahl-Dialog, um das Gerät auszuwählen.",
     "opening": "Öffne {{path}}",
     "baudDetail": "{{baud}} Baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Öffnen Sie eine serielle Konsole für einen Router, Switch oder ein anderes an Ihrem Computer angeschlossenes Gerät."
   }
 }

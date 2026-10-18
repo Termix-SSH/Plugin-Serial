@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+### Changed
+
+- The plugin name and description show in your language
+
 ## 1.0.1
 
 ### Changed

@@ -24,5 +24,9 @@
     "browserPickerHint": "연결을 클릭하면 브라우저에서 기기를 선택할 수 있는 포트 선택기가 열립니다.",
     "opening": "{{path}} 열기 중",
     "baudDetail": "{{baud}} 보드"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "라우터, 스위치 또는 컴퓨터에 연결된 기타 장치의 시리얼 콘솔을 엽니다."
   }
 }

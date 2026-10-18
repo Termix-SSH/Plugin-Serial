@@ -24,5 +24,9 @@
     "browserPickerHint": "Klik Sambung dan pelayar anda akan membuka pemilih port untuk memilih peranti.",
     "opening": "Membuka {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Buka konsol serial ke router, switch, atau peranti lain yang disambungkan ke komputer anda."
   }
 }

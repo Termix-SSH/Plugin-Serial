@@ -24,5 +24,9 @@
     "browserPickerHint": "Kattintson a Csatlakozás gombra, és a böngésző megnyitja a portválasztót az eszköz kiválasztásához.",
     "opening": "{{path}} megnyitása",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Soros",
+    "description": "Nyisson meg egy soros konzolt egy útválasztóhoz, kapcsolóhoz vagy más, a számítógépéhez csatlakoztatott eszközhöz."
   }
 }

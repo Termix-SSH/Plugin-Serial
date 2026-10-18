@@ -24,5 +24,9 @@
     "browserPickerHint": "Kliknite Poveži in vaš brskalnik bo odprl izbirnik vrat za izbiro naprave.",
     "opening": "Odpiranje {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Odprite serijsko konzolo za usmerjevalnik, stikalo ali drugo napravo, priklopljeno na vaš računalnik."
   }
 }

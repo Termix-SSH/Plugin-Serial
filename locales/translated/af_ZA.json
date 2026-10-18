@@ -24,5 +24,9 @@
     "browserPickerHint": "Klik op Maak verbinding en jou blaaier sal 'n poortkiezer oopmaak om die toestel te kies.",
     "opening": "Maak {{path}} oop",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Reeks",
+    "description": "Maak 'n reeks-konsol oop na 'n router, skakelaar of ander toestel wat in jou rekenaar gesteek is."
   }
 }

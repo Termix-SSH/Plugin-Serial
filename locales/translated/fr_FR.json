@@ -24,5 +24,9 @@
     "browserPickerHint": "Cliquez sur Connecter et votre navigateur ouvrira un sélecteur de port pour choisir le périphérique.",
     "opening": "Ouverture de {{path}}",
     "baudDetail": "{{baud}} bauds"
+  },
+  "plugin": {
+    "name": "Série",
+    "description": "Ouvrez une console série vers un routeur, un commutateur ou tout autre appareil connecté à votre ordinateur."
   }
 }

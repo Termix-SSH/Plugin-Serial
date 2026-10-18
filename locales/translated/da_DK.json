@@ -24,5 +24,9 @@
     "browserPickerHint": "Klik på Forbind, og din browser åbner en portvælger, så du kan vælge enheden.",
     "opening": "Åbner {{path}}",
     "baudDetail": "{{baud}} baud"
+  },
+  "plugin": {
+    "name": "Serial",
+    "description": "Åbn en serialkonsol til en router, switch eller anden enhed, der er tilsluttet din computer."
   }
 }
