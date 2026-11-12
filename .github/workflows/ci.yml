@@ -5,9 +5,10 @@ on:
     branches: [main]
   pull_request:
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   check:
+    permissions:
+      contents: read
     uses: Termix-SSH/Termix-Registry/.github/workflows/plugin-ci.yml@main

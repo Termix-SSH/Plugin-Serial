@@ -1,8 +1,8 @@
 name: Release
 
-# Run by hand from a dev-X.Y.Z branch. stable releases X.Y.Z and merges the
-# branch into main; beta publishes X.Y.Z-beta.N for plugins on the beta
-# channel. overwrite releases the manifest version again from this commit.
+# Official plugins release from Termix-SSH/Termix-Registry with the Release
+# Plugin workflow. This one refuses Termix-SSH repos right away, so it needs
+# no secrets and only read access.
 
 on:
   workflow_dispatch:
@@ -25,13 +25,13 @@ on:
           - overwrite
           - dry-run
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   release:
+    permissions:
+      contents: read
     uses: Termix-SSH/Termix-Registry/.github/workflows/plugin-release.yml@main
     with:
       channel: ${{ inputs.channel }}
       mode: ${{ inputs.mode }}
-    secrets: inherit
