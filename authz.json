@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [],
+  "routes": {
+    "WS /plugin-ws/serial/console": {
+      "access": "user"
+    }
+  }
+}
