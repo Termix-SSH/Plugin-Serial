@@ -13,6 +13,7 @@ const manifest = manifestJson as unknown as PluginManifest;
 describe("serial activate", () => {
   it("mounts the console WS route at /console with every declared capability", async () => {
     const mock: MockPluginContext = createMockCtx({
+      sandbox: true,
       pluginId: manifest.id,
       manifest,
       capabilities: manifest.capabilities,
@@ -25,6 +26,7 @@ describe("serial activate", () => {
 
   it("refuses to mount without network:serve", async () => {
     const mock: MockPluginContext = createMockCtx({
+      sandbox: true,
       pluginId: manifest.id,
       manifest,
       capabilities: manifest.capabilities.filter((c) => c !== "network:serve"),
