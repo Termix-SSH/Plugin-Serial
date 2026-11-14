@@ -8,6 +8,7 @@ import {
 } from "react";
 import { useXTerm } from "react-xtermjs";
 import { FitAddon } from "@xterm/addon-fit";
+import { clipboardKeyHandler } from "./clipboard-keys.js";
 import {
   ConnectionScreen,
   type ConnectionStatus,
@@ -295,6 +296,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     terminal.loadAddon(fitAddon);
     terminal.options.cursorBlink = true;
     terminal.options.scrollback = 10000;
+    terminal.attachCustomKeyEventHandler(clipboardKeyHandler(terminal));
 
     const onData = terminal.onData((data) => {
       if (!connectedRef.current) return;
