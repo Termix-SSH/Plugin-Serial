@@ -23,6 +23,12 @@
   },
   "capabilities": ["network:serve", "device:serial", "ui:surface"],
   "nativeDependencies": ["serialport"],
+  "env": [
+    {
+      "name": "LIBC",
+      "description": "glibc or musl. Picks the serial port binary on Linux. Found on its own when not set."
+    }
+  ],
   "locales": "locales",
   "platforms": ["linux", "win32", "darwin"],
   "contributes": {
