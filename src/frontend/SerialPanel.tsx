@@ -4,7 +4,7 @@ import { Input, Select2 } from "@termix-ssh/plugin-sdk/ui";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { SerialConfig } from "./types.js";
 import { isElectron } from "./electron.js";
-import { resolveSerialWsUrl } from "./transport.js";
+import { resolveSerialWsUrl, serialBridge } from "./transport.js";
 
 const BAUD_RATES = [
   300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200, 230400, 460800,
@@ -18,8 +18,8 @@ interface SerialPanelProps {
 // In Chrome/Edge the Web Serial API shows its own native port picker on requestPort(),
 // so getPorts() only returns previously-granted ports. We never need the user to type
 // a path, the browser handles selection at connect time.
-const useWebSerial = !isElectron() && "serial" in navigator;
-const serialUnsupported = !isElectron() && !("serial" in navigator);
+const webSerialMode = () => !isElectron() && serialBridge() !== null;
+const serialMissing = () => !isElectron() && serialBridge() === null;
 
 export function SerialPanel({ onConnect }: SerialPanelProps) {
   const { t } = useTranslation();
@@ -71,8 +71,8 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
 
   const connect = () => {
     // For Web Serial, path is irrelevant, the browser picker handles it.
-    // We pass an empty string; Serial.tsx calls requestPort() itself.
-    if (useWebSerial) {
+    // We pass an empty string; the tab asks the shell for a port.
+    if (webSerialMode()) {
       onConnect({ path: "", baudRate, dataBits, stopBits, parity });
       return;
     }
@@ -83,7 +83,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
 
   // ── Not supported (Firefox, Safari, etc.) ─────────────────────────────
 
-  if (serialUnsupported) {
+  if (serialMissing()) {
     return (
       <div className="flex flex-col flex-1 min-h-0 overflow-y-auto">
         <div className="flex flex-col gap-3 p-3">
@@ -108,7 +108,7 @@ export function SerialPanel({ onConnect }: SerialPanelProps) {
 
   // ── Web Serial (Chrome / Edge) ─────────────────────────────────────────
 
-  if (useWebSerial) {
+  if (webSerialMode()) {
     return (
       <div className="flex flex-col flex-1 min-h-0 overflow-y-auto">
         <div className="flex flex-col gap-3 p-3">

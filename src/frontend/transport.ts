@@ -21,3 +21,31 @@ export async function resolveSerialWsUrl() {
   if (!wsUrl) return null;
   return wsUrl("/console");
 }
+
+/** The shell's Web Serial bridge (Termix 26.11.2, plugin API 2.8). */
+export interface SerialBridge {
+  readonly available: boolean;
+  request: (
+    options: {
+      baudRate: number;
+      dataBits?: 7 | 8;
+      stopBits?: 1 | 2;
+      parity?: "none" | "even" | "odd";
+    },
+    events: { onData: (chunk: Uint8Array) => void; onClose: () => void },
+  ) => Promise<{
+    write: (data: Uint8Array) => Promise<void>;
+    close: () => Promise<void>;
+  } | null>;
+}
+
+let bridge: SerialBridge | null = null;
+
+export function setSerialBridge(next: SerialBridge | null): void {
+  bridge = next;
+}
+
+/** The bridge, or null on a core or browser without Web Serial. */
+export function serialBridge(): SerialBridge | null {
+  return bridge?.available ? bridge : null;
+}

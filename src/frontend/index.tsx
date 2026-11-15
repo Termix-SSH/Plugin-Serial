@@ -10,7 +10,11 @@ import type {
 } from "@termix-ssh/plugin-sdk/frontend";
 import { Serial } from "./Serial.js";
 import { SerialPanel } from "./SerialPanel.js";
-import { setSerialWsUrl } from "./transport.js";
+import {
+  setSerialBridge,
+  setSerialWsUrl,
+  type SerialBridge,
+} from "./transport.js";
 import type { SerialConfig, SerialHandle } from "./types.js";
 
 /**
@@ -59,7 +63,11 @@ function SerialTabView({ tab, isVisible, handleRef }: TabProps) {
 
 export function activate(app: TermixApp): void {
   setSerialWsUrl(app.wsUrl);
-  app.onDispose(() => setSerialWsUrl(null));
+  setSerialBridge((app as { serial?: SerialBridge }).serial ?? null);
+  app.onDispose(() => {
+    setSerialWsUrl(null);
+    setSerialBridge(null);
+  });
 
   app.registerRailItem({
     id: "serial",

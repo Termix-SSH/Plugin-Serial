@@ -16,6 +16,7 @@
     "connect": "Connect to Serial",
     "refreshPorts": "Refresh ports",
     "disconnected": "Serial port disconnected",
+    "choosePort": "Click Reconnect to choose a serial port",
     "wsError": "WebSocket error",
     "errorNoServerUrl": "No server URL configured",
     "notSupportedTitle": "Serial Not Supported",

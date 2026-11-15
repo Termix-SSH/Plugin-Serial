@@ -19,7 +19,7 @@ import {
 } from "@termix-ssh/plugin-sdk/frontend";
 import type { SerialConfig, SerialHandle } from "./types.js";
 import { isElectron } from "./electron.js";
-import { resolveSerialWsUrl } from "./transport.js";
+import { resolveSerialWsUrl, serialBridge } from "./transport.js";
 
 interface SerialLook {
   colors: Record<string, string | undefined>;
@@ -36,15 +36,8 @@ const FALLBACK_COLORS = {
 const FALLBACK_FONT = '"SF Mono", Consolas, "Liberation Mono", monospace';
 
 type WebSerialPort = {
-  open(options: {
-    baudRate: number;
-    dataBits?: number;
-    stopBits?: number;
-    parity?: string;
-  }): Promise<void>;
-  close(): Promise<void>;
-  readable: ReadableStream<Uint8Array> | null;
-  writable: WritableStream<Uint8Array> | null;
+  write: (data: Uint8Array) => Promise<void>;
+  close: () => Promise<void>;
 };
 
 interface SerialProps {
@@ -69,8 +62,6 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     setStatus("error");
   }, []);
   const connectedRef = useRef(false);
-  const webSerialReaderRef = useRef<ReadableStreamDefaultReader | null>(null);
-  const webSerialWriterRef = useRef<WritableStreamDefaultWriter | null>(null);
   const webSerialPortRef = useRef<WebSerialPort | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -173,73 +164,57 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
   // ── Web Serial API path ────────────────────────────────────────────────
 
   const disconnectWebSerial = useCallback(async () => {
-    // The port only closes once both streams are unlocked.
+    const port = webSerialPortRef.current;
+    webSerialPortRef.current = null;
+    connectedRef.current = false;
     try {
-      const reader = webSerialReaderRef.current;
-      await reader?.cancel();
-      reader?.releaseLock();
-      webSerialWriterRef.current?.releaseLock();
-      await webSerialPortRef.current?.close();
+      await port?.close();
     } catch {
       // best-effort
     }
-    webSerialReaderRef.current = null;
-    webSerialWriterRef.current = null;
-    webSerialPortRef.current = null;
-    connectedRef.current = false;
   }, []);
 
   const connectWebSerial = useCallback(async () => {
     await disconnectWebSerial();
 
-    if (!("serial" in navigator)) return;
+    const bridge = serialBridge();
+    if (!bridge) return;
 
     setStatus("connecting");
     setFailure(null);
     try {
-      const serial = navigator.serial as {
-        requestPort(): Promise<WebSerialPort>;
-      };
-      const port = await serial.requestPort();
-      await port.open({
-        baudRate: config.baudRate,
-        dataBits: config.dataBits,
-        stopBits: config.stopBits,
-        parity: config.parity === "none" ? "none" : config.parity,
-      });
-
+      const decoder = new TextDecoder();
+      const port = await bridge.request(
+        {
+          baudRate: config.baudRate,
+          dataBits: config.dataBits === 7 ? 7 : 8,
+          stopBits: config.stopBits,
+          parity: config.parity,
+        },
+        {
+          onData: (chunk) => write(decoder.decode(chunk, { stream: true })),
+          onClose: () => {
+            if (webSerialPortRef.current !== port) return;
+            webSerialPortRef.current = null;
+            connectedRef.current = false;
+            setStatus("disconnected");
+          },
+        },
+      );
+      if (!port) {
+        // No port picked counts as a plain disconnect, not a failure.
+        setStatus("disconnected");
+        return;
+      }
       webSerialPortRef.current = port;
       connectedRef.current = true;
       setStatus("connected");
-
-      const reader = port.readable!.getReader();
-      webSerialReaderRef.current = reader;
-      const decoder = new TextDecoder();
-
-      (async () => {
-        try {
-          for (;;) {
-            const { value, done } = await reader.read();
-            if (done) break;
-            write(decoder.decode(value, { stream: true }));
-          }
-        } catch {
-          // port closed
-        } finally {
-          reader.releaseLock();
-          connectedRef.current = false;
-          setStatus("disconnected");
-        }
-      })();
-
-      const writer = port.writable!.getWriter();
-      webSerialWriterRef.current = writer;
     } catch (err) {
-      // No port picked counts as a plain disconnect, not a failure.
-      if (err instanceof Error && err.name !== "NotFoundError") {
-        fail(err.message);
-      } else {
+      // The port picker only opens from a click in this tab.
+      if (err instanceof Error && err.message === "Not allowed now") {
         setStatus("disconnected");
+      } else {
+        fail(err instanceof Error ? err.message : String(err));
       }
     }
   }, [config, disconnectWebSerial, fail, write]);
@@ -277,8 +252,9 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     isConnected: () => connectedRef.current,
     sendInput: (data: string) => {
       if (useWebSerial) {
-        const encoder = new TextEncoder();
-        webSerialWriterRef.current?.write(encoder.encode(data)).catch(() => {});
+        void webSerialPortRef.current
+          ?.write(new TextEncoder().encode(data))
+          .catch(() => {});
       } else if (wsRef.current?.readyState === WebSocket.OPEN) {
         wsRef.current.send(JSON.stringify({ type: "input", data }));
       }
@@ -299,14 +275,17 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
     const onData = terminal.onData((data) => {
       if (!connectedRef.current) return;
       if (useWebSerial) {
-        const encoder = new TextEncoder();
-        webSerialWriterRef.current?.write(encoder.encode(data)).catch(() => {});
+        void webSerialPortRef.current
+          ?.write(new TextEncoder().encode(data))
+          .catch(() => {});
       } else if (wsRef.current?.readyState === WebSocket.OPEN) {
         wsRef.current.send(JSON.stringify({ type: "input", data }));
       }
     });
 
-    connect();
+    // The browser's port picker opens only from a click in this tab.
+    if (useWebSerial) setStatus("disconnected");
+    else connect();
 
     return () => {
       onData.dispose();
@@ -343,7 +322,7 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
 
   // ── Not supported (Firefox etc.) ──────────────────────────────────────
 
-  if (useWebSerial && !("serial" in navigator)) {
+  if (useWebSerial && !serialBridge()) {
     return (
       <div className="relative flex h-full w-full">
         <ConnectionScreen
@@ -367,7 +346,9 @@ export const Serial = forwardRef<SerialHandle, SerialProps>(function Serial(
         })}
         detail={t("serial.baudDetail", { baud: config.baudRate })}
         errorDetail={failure}
-        disconnectedMessage={t("serial.disconnected")}
+        disconnectedMessage={
+          useWebSerial ? t("serial.choosePort") : t("serial.disconnected")
+        }
         onManualRetry={reconnect}
       />
     </div>
