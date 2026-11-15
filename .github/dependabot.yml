@@ -19,6 +19,22 @@ updates:
     # SDK bumps go with engine.termix changes, so they are made by hand.
     ignore:
       - dependency-name: "@termix-ssh/plugin-sdk"
+      # Core shares one copy of these with every plugin, so their majors
+      # follow core and the SDK.
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "i18next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-i18next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "sonner"
+        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: chore
 
