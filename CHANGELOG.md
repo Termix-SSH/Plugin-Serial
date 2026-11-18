@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0
+
+### Changed
+
+- Runs in its own process on Termix 26.11.2 and later, with no access to the server beyond what Termix allows it
+- Its screens run in a sandboxed frame. In the browser, Termix asks for the serial port and the plugin only gets the port you pick
+- In the browser, the serial tab waits for you to click Reconnect before the port picker opens
+
+### Fixed
+
+- Copy and paste in the serial terminal with Ctrl+Shift+C and Ctrl+Shift+V, or Cmd on macOS
+
 ## 1.0.2
 
 ### Changed

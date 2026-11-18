@@ -16,6 +16,7 @@
     "connect": "Verbinden met serial",
     "refreshPorts": "Poorten vernieuwen",
     "disconnected": "Serialpoort verbroken",
+    "choosePort": "Klik op Opnieuw verbinden om een seriële poort te kiezen",
     "wsError": "WebSocket-fout",
     "errorNoServerUrl": "Geen server-URL geconfigureerd",
     "notSupportedTitle": "Serial niet ondersteund",

@@ -16,6 +16,7 @@
     "connect": "Kết nối Serial",
     "refreshPorts": "Làm mới cổng",
     "disconnected": "Cổng Serial đã ngắt kết nối",
+    "choosePort": "Nhấp vào Kết nối lại để chọn cổng nối tiếp",
     "wsError": "Lỗi WebSocket",
     "errorNoServerUrl": "Chưa cấu hình URL máy chủ",
     "notSupportedTitle": "Serial Không Được Hỗ Trợ",

@@ -16,6 +16,7 @@
     "connect": "Seri Port'a Bağlan",
     "refreshPorts": "Portları yenile",
     "disconnected": "Seri port bağlantısı kesildi",
+    "choosePort": "Bir seri port seçmek için Yeniden Bağlan'a tıklayın",
     "wsError": "WebSocket hatası",
     "errorNoServerUrl": "Sunucu URL'si yapılandırılmamış",
     "notSupportedTitle": "Seri Port Desteklenmiyor",

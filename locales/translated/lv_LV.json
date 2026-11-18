@@ -16,6 +16,7 @@
     "connect": "Savienot ar seriālo",
     "refreshPorts": "Atsvaidzināt portus",
     "disconnected": "Seriālais ports atvienots",
+    "choosePort": "Noklikšķiniet uz Pārsavienot, lai izvēlētos seriālo portu",
     "wsError": "WebSocket kļūda",
     "errorNoServerUrl": "Nav konfigurēts servera URL",
     "notSupportedTitle": "Seriālais nav atbalstīts",

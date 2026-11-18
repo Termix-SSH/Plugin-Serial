@@ -16,6 +16,7 @@
     "connect": "Mit Serial verbinden",
     "refreshPorts": "Ports aktualisieren",
     "disconnected": "Serial-Port getrennt",
+    "choosePort": "Klicken Sie auf „Wiederherstellen“, um einen seriellen Port auszuwählen",
     "wsError": "WebSocket-Fehler",
     "errorNoServerUrl": "Keine Server-URL konfiguriert",
     "notSupportedTitle": "Serial nicht unterstützt",

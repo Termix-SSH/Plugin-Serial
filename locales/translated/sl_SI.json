@@ -16,6 +16,7 @@
     "connect": "Poveži s serijskim",
     "refreshPorts": "Osveži vrata",
     "disconnected": "Serijska vrata so odklopljena",
+    "choosePort": "Kliknite Ponovno povezava za izbiro serijskega vrat",
     "wsError": "Napaka WebSocket",
     "errorNoServerUrl": "Ni konfiguriranega URL-ja strežnika",
     "notSupportedTitle": "Serijska povezava ni podprta",

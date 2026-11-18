@@ -16,6 +16,7 @@
     "connect": "Sambungkan ke Serial",
     "refreshPorts": "Muat ulang port",
     "disconnected": "Port serial terputus",
+    "choosePort": "Klik Sambungkan Ulang untuk memilih port serial",
     "wsError": "Kesalahan WebSocket",
     "errorNoServerUrl": "Tidak ada URL server yang dikonfigurasi",
     "notSupportedTitle": "Serial Tidak Didukung",

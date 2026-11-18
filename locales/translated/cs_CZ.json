@@ -16,6 +16,7 @@
     "connect": "Připojit k sériovému portu",
     "refreshPorts": "Obnovit porty",
     "disconnected": "Sériový port odpojen",
+    "choosePort": "Klikněte na Připojit znovu pro výběr sériového portu",
     "wsError": "Chyba WebSocketu",
     "errorNoServerUrl": "Není nakonfigurována adresa serveru",
     "notSupportedTitle": "Sériové připojení není podporováno",

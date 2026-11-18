@@ -16,6 +16,7 @@
     "connect": "Yhdistä sarjaporttiin",
     "refreshPorts": "Päivitä portit",
     "disconnected": "Sarjaportti katkennut",
+    "choosePort": "Valitse sarjaportti napsauttamalla Yhdistä uudelleen",
     "wsError": "WebSocket-virhe",
     "errorNoServerUrl": "Palvelimen URL-osoitetta ei ole määritetty",
     "notSupportedTitle": "Sarjaportti ei tuettu",

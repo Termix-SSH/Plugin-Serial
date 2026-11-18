@@ -1,10 +1,11 @@
 import type { WebSocket } from "ws";
-import { SerialPort } from "serialport";
+import type { SerialPort } from "serialport";
 import type {
   PluginContext,
   PluginWebSocketConnection,
 } from "@termix-ssh/plugin-sdk/backend";
 import { parseWsMessage } from "./ws-message.js";
+import { loadSerialPort } from "./serialport.js";
 
 interface SerialConnectData {
   path: string;
@@ -69,6 +70,7 @@ export function createSerialSession(ctx: PluginContext) {
           case "list_ports": {
             await ctx.capabilities.require("device:serial");
             try {
+              const { SerialPort } = await loadSerialPort();
               const ports = await SerialPort.list();
               send({ type: "ports_list", data: ports });
             } catch (err) {
@@ -94,6 +96,7 @@ export function createSerialSession(ctx: PluginContext) {
             }
 
             try {
+              const { SerialPort } = await loadSerialPort();
               const opened = new SerialPort({
                 path: cfg.path,
                 baudRate: cfg.baudRate,

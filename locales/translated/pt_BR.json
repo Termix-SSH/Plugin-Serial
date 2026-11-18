@@ -16,6 +16,7 @@
     "connect": "Conectar ao Serial",
     "refreshPorts": "Atualizar portas",
     "disconnected": "Porta serial desconectada",
+    "choosePort": "Clique em Reconectar para escolher uma porta serial",
     "wsError": "Erro de WebSocket",
     "errorNoServerUrl": "Nenhuma URL de servidor configurada",
     "notSupportedTitle": "Serial Não Suportado",

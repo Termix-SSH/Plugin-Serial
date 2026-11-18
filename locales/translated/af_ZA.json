@@ -16,6 +16,7 @@
     "connect": "Maak verbinding met Reeks",
     "refreshPorts": "Verfris poorte",
     "disconnected": "Reekspoort ontkoppel",
+    "choosePort": "Klik op Herkoppel om ’n reekspoort te kies",
     "wsError": "WebSocket-fout",
     "errorNoServerUrl": "Geen bediener-URL geconfigureer nie",
     "notSupportedTitle": "Reeks word nie ondersteun nie",

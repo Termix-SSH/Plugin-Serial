@@ -16,6 +16,7 @@
     "connect": "Prisijungti prie serijinio",
     "refreshPorts": "Atnaujinti prievadus",
     "disconnected": "Serijinis prievadas atjungtas",
+    "choosePort": "Spustelėkite „Perjungti“, kad pasirinktumėte serijinį prievadą",
     "wsError": "WebSocket klaida",
     "errorNoServerUrl": "Nenurodytas serverio URL",
     "notSupportedTitle": "Serijinis nepalaikomas",

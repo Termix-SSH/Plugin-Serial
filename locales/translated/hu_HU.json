@@ -16,6 +16,7 @@
     "connect": "Csatlakozás soros port",
     "refreshPorts": "Portok frissítése",
     "disconnected": "A soros port leválasztva",
+    "choosePort": "Kattintson az Újracsatlakozás gombra a soros port kiválasztásához",
     "wsError": "WebSocket hiba",
     "errorNoServerUrl": "Nincs konfigurált szerver URL",
     "notSupportedTitle": "A soros kapcsolat nem támogatott",

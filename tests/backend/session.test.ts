@@ -93,7 +93,11 @@ describe("serial session", () => {
   });
 
   it("refuses list_ports and connect without device:serial", async () => {
-    mock = createMockCtx({ pluginId: "serial", capabilities: [] });
+    mock = createMockCtx({
+      sandbox: true,
+      pluginId: "serial",
+      capabilities: [],
+    });
     const socket = new FakeSocket();
     await createSerialSession(mock.ctx)(fakeConnection(socket));
 
@@ -112,6 +116,7 @@ describe("serial session", () => {
 
   it("lists ports once granted device:serial", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -128,6 +133,7 @@ describe("serial session", () => {
 
   it("opens, writes to and closes a port through connect/input/disconnect", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -154,6 +160,7 @@ describe("serial session", () => {
 
   it("rejects a connect with no path or baud rate without touching the port", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -168,6 +175,7 @@ describe("serial session", () => {
 
   it("closes the socket at connect time when data is locked", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -179,6 +187,7 @@ describe("serial session", () => {
 
   it("refuses a message once data locks mid-session", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -195,6 +204,7 @@ describe("serial session", () => {
 
   it("closes a port that finishes opening after the socket closed", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });
@@ -215,6 +225,7 @@ describe("serial session", () => {
 
   it("keeps the new port when a second connect replaces the first", async () => {
     mock = createMockCtx({
+      sandbox: true,
       pluginId: "serial",
       capabilities: ["network:serve", "device:serial"],
     });

@@ -16,6 +16,7 @@
     "connect": "Ühenda jadapordiga",
     "refreshPorts": "Värskenda porte",
     "disconnected": "Jadapordi ühendus katkenud",
+    "choosePort": "Vajake Ühenda uuesti, et valida seeriaport",
     "wsError": "WebSocketi viga",
     "errorNoServerUrl": "Serveri URL-i pole määratud",
     "notSupportedTitle": "Jadaport ei ole toetatud",

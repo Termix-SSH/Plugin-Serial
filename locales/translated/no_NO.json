@@ -16,6 +16,7 @@
     "connect": "Koble til serial",
     "refreshPorts": "Oppdater porter",
     "disconnected": "Serialporten er frakoblet",
+    "choosePort": "Klikk på Tilkobling for å velge en seriell port",
     "wsError": "WebSocket-feil",
     "errorNoServerUrl": "Ingen server-URL er konfigurert",
     "notSupportedTitle": "Serial støttes ikke",

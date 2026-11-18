@@ -16,6 +16,7 @@
     "connect": "الاتصال بالسيريال",
     "refreshPorts": "تحديث المنافذ",
     "disconnected": "انقطع اتصال منفذ السيريال",
+    "choosePort": "انقر على إعادة الاتصال لاختيار منفذ تسلسلي",
     "wsError": "خطأ في WebSocket",
     "errorNoServerUrl": "لم يتم تكوين عنوان URL للخادم",
     "notSupportedTitle": "السيريال غير مدعوم",

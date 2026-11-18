@@ -16,6 +16,7 @@
     "connect": "连接串口",
     "refreshPorts": "刷新端口",
     "disconnected": "串口已断开",
+    "choosePort": "点击“重新连接”以选择串行端口",
     "wsError": "WebSocket 错误",
     "errorNoServerUrl": "未配置服务器 URL",
     "notSupportedTitle": "不支持串口",

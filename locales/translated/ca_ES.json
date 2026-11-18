@@ -16,6 +16,7 @@
     "connect": "Connectar a Sèrie",
     "refreshPorts": "Actualitzar ports",
     "disconnected": "Port sèrie desconnectat",
+    "choosePort": "Feu a Reconnectar per triar un port sèrie",
     "wsError": "Error de WebSocket",
     "errorNoServerUrl": "No s'ha configurat cap URL del servidor",
     "notSupportedTitle": "Sèrie no compatible",

@@ -16,6 +16,7 @@
     "connect": "Подключиться к Serial",
     "refreshPorts": "Обновить порты",
     "disconnected": "Serial-порт отключён",
+    "choosePort": "Нажмите «Переподключиться», чтобы выбрать последовательный порт",
     "wsError": "Ошибка WebSocket",
     "errorNoServerUrl": "URL-адрес сервера не настроен",
     "notSupportedTitle": "Serial не поддерживается",

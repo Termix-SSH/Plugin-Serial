@@ -16,6 +16,7 @@
     "connect": "Poveži se na serijalni port",
     "refreshPorts": "Osvježi portove",
     "disconnected": "Serijalni port je isključen",
+    "choosePort": "Kliknite na Ponovno povezivanje za odabir serijskog porta",
     "wsError": "Greška WebSocketa",
     "errorNoServerUrl": "URL poslužitelja nije konfiguriran",
     "notSupportedTitle": "Serijalna veza nije podržana",

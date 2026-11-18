@@ -16,6 +16,7 @@
     "connect": "Połącz z portem szeregowym",
     "refreshPorts": "Odśwież porty",
     "disconnected": "Port szeregowy odłączony",
+    "choosePort": "Kliknij Ponowne połączenie, aby wybrać port szeregowy",
     "wsError": "Błąd WebSocket",
     "errorNoServerUrl": "Nie skonfigurowano adresu URL serwera",
     "notSupportedTitle": "Port szeregowy nieobsługiwany",

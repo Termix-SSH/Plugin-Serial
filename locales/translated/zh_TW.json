@@ -16,6 +16,7 @@
     "connect": "連線至序列埠",
     "refreshPorts": "重新整理埠",
     "disconnected": "序列埠已斷開連線",
+    "choosePort": "按一下「重新連線」以選擇序列埠",
     "wsError": "WebSocket 錯誤",
     "errorNoServerUrl": "未設定伺服器 URL",
     "notSupportedTitle": "不支援序列埠",

@@ -16,6 +16,7 @@
     "connect": "シリアルに接続",
     "refreshPorts": "ポートを更新",
     "disconnected": "シリアルポートが切断されました",
+    "choosePort": "シリアルポートを選択するには「再接続」をクリックしてください",
     "wsError": "WebSocket エラー",
     "errorNoServerUrl": "サーバー URL が設定されていません",
     "notSupportedTitle": "シリアルはサポートされていません",

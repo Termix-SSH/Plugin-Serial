@@ -16,6 +16,7 @@
     "connect": "Conectare la Serial",
     "refreshPorts": "Reîmprospătare porturi",
     "disconnected": "Portul serial a fost deconectat",
+    "choosePort": "Faceți clic pe Reconectare pentru a alege un port serial",
     "wsError": "Eroare WebSocket",
     "errorNoServerUrl": "Nicio adresă URL a serverului nu este configurată",
     "notSupportedTitle": "Serial nesuportat",

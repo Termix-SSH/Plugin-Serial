@@ -16,6 +16,7 @@
     "connect": "시리얼 연결",
     "refreshPorts": "포트 새로고침",
     "disconnected": "시리얼 포트 연결 끊김",
+    "choosePort": "시리얼 포트를 선택하려면 다시 연결을 클릭하세요",
     "wsError": "WebSocket 오류",
     "errorNoServerUrl": "서버 URL이 구성되지 않았습니다",
     "notSupportedTitle": "시리얼 지원 안 함",

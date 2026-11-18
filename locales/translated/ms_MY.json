@@ -16,6 +16,7 @@
     "connect": "Sambung ke Serial",
     "refreshPorts": "Muat semula port",
     "disconnected": "Port serial terputus",
+    "choosePort": "Klik Sambung Semula untuk memilih port siri",
     "wsError": "Ralat WebSocket",
     "errorNoServerUrl": "Tiada URL pelayan dikonfigurasi",
     "notSupportedTitle": "Serial Tidak Disokong",

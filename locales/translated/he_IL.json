@@ -16,6 +16,7 @@
     "connect": "התחבר לסיריאלי",
     "refreshPorts": "רענן פורטים",
     "disconnected": "פורט סיריאלי נותק",
+    "choosePort": "לחץ על התחבר מחדש כדי לבחור יציאה סדרתית",
     "wsError": "שגיאת WebSocket",
     "errorNoServerUrl": "לא הוגדר כתובת שרת",
     "notSupportedTitle": "סיריאלי לא נתמך",
